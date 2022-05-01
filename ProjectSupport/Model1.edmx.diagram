@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1c695d8db35748e9a8ccefc2818e13f0" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="UsersDB.Items" Width="1.5" PointX="5.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsersDB.Roles" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsersDB.Transactions" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsersDB.Users" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="UsersDB.FK__Transacti__ItemI__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="UsersDB.FK__Users__RoleId__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="UsersDB.FK__Transacti__UserI__72C60C4A" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="UsersDB.CaseTab" Width="1.5" PointX="7.5" PointY="0.75" />
+        <AssociationConnector Association="UsersDB.FK__CaseTab__Transac__76969D2E" />
+        <AssociationConnector Association="UsersDB.FK__CaseTab__UserId__778AC167" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
