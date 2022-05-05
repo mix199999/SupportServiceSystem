@@ -59,6 +59,7 @@ namespace ProjectSupport
                         this.Hide();
                         using (AdminForm adminForm = new AdminForm())
                         {
+                            adminForm.UserID = loginQuery.UserId;
                             adminForm.ShowDialog();
                         }
                     }
@@ -66,7 +67,9 @@ namespace ProjectSupport
                     {
                         this.Hide();
                         using(UserForm userForm = new UserForm())
-                        { userForm.ShowDialog();}
+                        { 
+                            userForm.UserID = loginQuery.UserId;
+                            userForm.ShowDialog();}
 
                     }
                 }

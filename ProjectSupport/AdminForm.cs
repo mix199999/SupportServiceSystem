@@ -13,6 +13,14 @@ namespace ProjectSupport
    
     public partial class AdminForm : Form
     {
+
+        private int _userId;
+        public int UserID
+        {
+            get { return _userId; }
+            set { _userId = value; }
+        }
+
         ProjectDB adminDB = new ProjectDB();
         public AdminForm()
         {
@@ -23,7 +31,7 @@ namespace ProjectSupport
         {
            
             caseTabBindingSource1.DataSource = adminDB.CaseTab.ToList();
-
+            label1.Text = UserID.ToString();
 
 
         }
@@ -36,8 +44,9 @@ namespace ProjectSupport
                 caseTabBindingSource1.EndEdit();
                 await adminDB.SaveChangesAsync();
                 dataGridView1.Refresh();
+                MessageBox.Show("text Added","message", MessageBoxButtons.OK);
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
                 MessageBox.Show(ex.Message);
             }

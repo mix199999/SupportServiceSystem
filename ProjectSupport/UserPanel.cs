@@ -24,5 +24,15 @@ namespace ProjectSupport
             IsLoggedIn = true;
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sendBt_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

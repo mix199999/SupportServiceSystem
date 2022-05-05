@@ -37,23 +37,21 @@
             // 
             // loginTB
             // 
-            this.loginTB.Location = new System.Drawing.Point(261, 90);
+            this.loginTB.Location = new System.Drawing.Point(92, 57);
             this.loginTB.Name = "loginTB";
             this.loginTB.Size = new System.Drawing.Size(119, 20);
             this.loginTB.TabIndex = 0;
-           // this.loginTB.TextChanged += new System.EventHandler(this.loginTB_TextChanged);
             // 
             // passwdTB
             // 
-            this.passwdTB.Location = new System.Drawing.Point(261, 140);
+            this.passwdTB.Location = new System.Drawing.Point(92, 107);
             this.passwdTB.Name = "passwdTB";
             this.passwdTB.Size = new System.Drawing.Size(119, 20);
             this.passwdTB.TabIndex = 1;
-           // this.passwdTB.TextChanged += new System.EventHandler(this.passwdTB_TextChanged);
             // 
             // loginBt
             // 
-            this.loginBt.Location = new System.Drawing.Point(417, 112);
+            this.loginBt.Location = new System.Drawing.Point(112, 154);
             this.loginBt.Name = "loginBt";
             this.loginBt.Size = new System.Drawing.Size(75, 23);
             this.loginBt.TabIndex = 2;
@@ -64,7 +62,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(178, 93);
+            this.label1.Location = new System.Drawing.Point(31, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 3;
@@ -73,7 +71,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(178, 140);
+            this.label2.Location = new System.Drawing.Point(31, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 4;
@@ -83,7 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(283, 234);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.loginBt);

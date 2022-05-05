@@ -42,6 +42,7 @@
             this.adminTextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.caseStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.caseTabBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.caseTabBindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +57,7 @@
             // 
             // InsertBt
             // 
-            this.InsertBt.Location = new System.Drawing.Point(1159, 538);
+            this.InsertBt.Location = new System.Drawing.Point(1211, 508);
             this.InsertBt.Name = "InsertBt";
             this.InsertBt.Size = new System.Drawing.Size(75, 23);
             this.InsertBt.TabIndex = 2;
@@ -75,7 +76,7 @@
             // 
             // SaveBt
             // 
-            this.SaveBt.Location = new System.Drawing.Point(1007, 538);
+            this.SaveBt.Location = new System.Drawing.Point(949, 547);
             this.SaveBt.Name = "SaveBt";
             this.SaveBt.Size = new System.Drawing.Size(75, 23);
             this.SaveBt.TabIndex = 4;
@@ -149,11 +150,21 @@
             this.caseTabBindingSource1.DataSource = typeof(ProjectSupport.CaseTab);
             this.caseTabBindingSource1.CurrentChanged += new System.EventHandler(this.caseTabBindingSource1_CurrentChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(336, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "label1";
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1425, 641);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.SaveBt);
             this.Controls.Add(this.button2);
@@ -165,6 +176,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.caseTabBindingSource1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -182,5 +194,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn adminTextDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn caseStatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource caseTabBindingSource1;
+        private System.Windows.Forms.Label label1;
     }
 }
