@@ -80,7 +80,7 @@ namespace ProjectSupport
 
         private void openCaseBt_Click(object sender, EventArgs e)
         {
-            
+            panel1.Controls.Clear();
             userPanel.Dock = DockStyle.Fill;
             panel1.Controls.Add(userPanel);
             sendBt.Visible = true;
