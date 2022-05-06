@@ -5,6 +5,22 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="UsersDB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Answears">
+          <Key>
+            <PropertyRef Name="AnswearId" />
+          </Key>
+          <Property Name="AnswearId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AnswearType" Type="varchar" MaxLength="20" />
+          <Property Name="AnswearText" Type="varchar" MaxLength="100" />
+          <Property Name="AnswearTypeId" Type="int" />
+        </EntityType>
+        <EntityType Name="AnswearsTypes">
+          <Key>
+            <PropertyRef Name="AnswearTypeId" />
+          </Key>
+          <Property Name="AnswearTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AnswearType" Type="varchar" MaxLength="20" />
+        </EntityType>
         <EntityType Name="CaseTab">
           <Key>
             <PropertyRef Name="CaseId" />
@@ -52,6 +68,18 @@
           <Property Name="UserName" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="UserPassword" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
+        <Association Name="FK__Answears__Answea__0D7A0286">
+          <End Role="AnswearsTypes" Type="Self.AnswearsTypes" Multiplicity="0..1" />
+          <End Role="Answears" Type="Self.Answears" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AnswearsTypes">
+              <PropertyRef Name="AnswearTypeId" />
+            </Principal>
+            <Dependent Role="Answears">
+              <PropertyRef Name="AnswearTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__CaseTab__Transac__01142BA1">
           <End Role="Transactions" Type="Self.Transactions" Multiplicity="0..1" />
           <End Role="CaseTab" Type="Self.CaseTab" Multiplicity="*" />
@@ -113,11 +141,17 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="UsersDBStoreContainer">
+          <EntitySet Name="Answears" EntityType="Self.Answears" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AnswearsTypes" EntityType="Self.AnswearsTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CaseTab" EntityType="Self.CaseTab" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Answears__Answea__0D7A0286" Association="Self.FK__Answears__Answea__0D7A0286">
+            <End Role="AnswearsTypes" EntitySet="AnswearsTypes" />
+            <End Role="Answears" EntitySet="Answears" />
+          </AssociationSet>
           <AssociationSet Name="FK__CaseTab__Transac__01142BA1" Association="Self.FK__CaseTab__Transac__01142BA1">
             <End Role="Transactions" EntitySet="Transactions" />
             <End Role="CaseTab" EntitySet="CaseTab" />
@@ -248,6 +282,12 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="CaseTab" EntitySet="CaseTab" />
           </AssociationSet>
+          <EntitySet Name="Answears" EntityType="UsersDB.Answears" />
+          <EntitySet Name="AnswearsTypes" EntityType="UsersDB.AnswearsTypes" />
+          <AssociationSet Name="FK__Answears__Answea__0D7A0286" Association="UsersDB.FK__Answears__Answea__0D7A0286">
+            <End Role="AnswearsTypes" EntitySet="AnswearsTypes" />
+            <End Role="Answears" EntitySet="Answears" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="CaseTab">
           <Key>
@@ -284,6 +324,36 @@
             </Principal>
             <Dependent Role="CaseTab">
               <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Answears">
+          <Key>
+            <PropertyRef Name="AnswearId" />
+          </Key>
+          <Property Name="AnswearId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AnswearType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AnswearText" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AnswearTypeId" Type="Int32" />
+          <NavigationProperty Name="AnswearsTypes" Relationship="UsersDB.FK__Answears__Answea__0D7A0286" FromRole="Answears" ToRole="AnswearsTypes" />
+        </EntityType>
+        <EntityType Name="AnswearsTypes">
+          <Key>
+            <PropertyRef Name="AnswearTypeId" />
+          </Key>
+          <Property Name="AnswearTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AnswearType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Answears" Relationship="UsersDB.FK__Answears__Answea__0D7A0286" FromRole="AnswearsTypes" ToRole="Answears" />
+        </EntityType>
+        <Association Name="FK__Answears__Answea__0D7A0286">
+          <End Type="UsersDB.AnswearsTypes" Role="AnswearsTypes" Multiplicity="0..1" />
+          <End Type="UsersDB.Answears" Role="Answears" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AnswearsTypes">
+              <PropertyRef Name="AnswearTypeId" />
+            </Principal>
+            <Dependent Role="Answears">
+              <PropertyRef Name="AnswearTypeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -342,6 +412,24 @@
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
                 <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Answears">
+            <EntityTypeMapping TypeName="UsersDB.Answears">
+              <MappingFragment StoreEntitySet="Answears">
+                <ScalarProperty Name="AnswearTypeId" ColumnName="AnswearTypeId" />
+                <ScalarProperty Name="AnswearText" ColumnName="AnswearText" />
+                <ScalarProperty Name="AnswearType" ColumnName="AnswearType" />
+                <ScalarProperty Name="AnswearId" ColumnName="AnswearId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AnswearsTypes">
+            <EntityTypeMapping TypeName="UsersDB.AnswearsTypes">
+              <MappingFragment StoreEntitySet="AnswearsTypes">
+                <ScalarProperty Name="AnswearType" ColumnName="AnswearType" />
+                <ScalarProperty Name="AnswearTypeId" ColumnName="AnswearTypeId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -1,4 +1,6 @@
-﻿namespace ProjectSupport
+﻿using System.Windows.Forms;
+
+namespace ProjectSupport
 {
     partial class HelpTopics
     {
@@ -32,10 +34,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.naviPanel = new System.Windows.Forms.Panel();
             this.backBt = new System.Windows.Forms.Label();
+            this.answearRT = new System.Windows.Forms.RichTextBox();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.answearRT);
             this.panel1.Location = new System.Drawing.Point(275, 55);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(417, 413);
@@ -68,6 +73,14 @@
             this.backBt.Text = "Back";
             this.backBt.Click += new System.EventHandler(this.backBt_Click);
             // 
+            // answearRT
+            // 
+            this.answearRT.Location = new System.Drawing.Point(3, 3);
+            this.answearRT.Name = "answearRT";
+            this.answearRT.Size = new System.Drawing.Size(411, 407);
+            this.answearRT.TabIndex = 0;
+            this.answearRT.Text = "";
+            // 
             // HelpTopics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -79,6 +92,7 @@
             this.Name = "HelpTopics";
             this.Size = new System.Drawing.Size(744, 521);
             this.Load += new System.EventHandler(this.faqUserControl_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,5 +104,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel naviPanel;
         private System.Windows.Forms.Label backBt;
+        private RichTextBox answearRT;
+
+        public Panel Panel1 { get => panel1; set => panel1 = value; }
+        public Label Label1 { get => label1; set => label1 = value; }
+        public Panel NaviPanel { get => naviPanel; set => naviPanel = value; }
+        public Label BackBt { get => backBt; set => backBt = value; }
+        public RichTextBox AnswearRT { get => answearRT; set => answearRT = value; }
     }
 }

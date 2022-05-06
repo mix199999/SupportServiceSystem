@@ -1,29 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjectSupport
 {
-   
+
 
     public partial class HelpTopics : UserControl
     {
-        selectSellerBuyerBar naviSelect = new selectSellerBuyerBar();
+        public EventHandler backBtClickHelp;
+
+        public selectSellerBuyerBar naviSelect = new selectSellerBuyerBar();
+        public sellerUserControl naviSeller = new sellerUserControl();
+        public buyerUserControl naviBuyer = new buyerUserControl();
+
+
         public HelpTopics()
         {
+         
+           
+            //naviPanel.Controls.Add(naviSelect);
+
+            //naviPanel.Controls.Add(naviSeller);
+            //naviPanel.Controls.Add(naviBuyer);
             InitializeComponent();
+            setDockHide(naviSelect);
+            setDockHide(naviBuyer);
+            setDockHide(naviSeller);
+
+
         }
 
         private void naviPanel_paint(object sender, PaintEventArgs e)
         {
-           
-            naviPanel.Controls.Add(naviSelect);
+
+
         }
 
         private void faqUserControl_Load(object sender, EventArgs e)
@@ -33,10 +43,22 @@ namespace ProjectSupport
 
         private void backBt_Click(object sender, EventArgs e)
         {
-            naviPanel.Controls.Clear();
-           // naviPanel.Dispose();
-            naviSelect = new selectSellerBuyerBar();
-            naviPanel.Controls.Add(naviSelect);
+            EventHandler click = backBtClickHelp;
+            click?.Invoke(this, e);
         }
+
+        private void setDockHide(UserControl cont)
+        {
+            naviPanel.Controls.Add(cont);
+            cont.Dock = DockStyle.Fill;
+            cont.Visible = false;
+            if(cont.Name ==naviSelect.Name)
+            {
+                cont.Visible = true;
+            }
+
+        }
+
+       
     }
 }

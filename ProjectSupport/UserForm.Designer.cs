@@ -6,7 +6,9 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
+        CaseTab userData = new CaseTab();
+        UserPanel userPanel = new UserPanel();
+        HelpTopics helpTopics = new HelpTopics();
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -22,6 +24,7 @@
 
         #region Windows Form Designer generated code
 
+        
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
@@ -44,7 +47,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(744, 521);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+           
             // 
             // listBox1
             // 
@@ -65,8 +68,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
+           
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -74,7 +76,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(110, 21);
             this.comboBox1.TabIndex = 3;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+           
             // 
             // openCaseBt
             // 
