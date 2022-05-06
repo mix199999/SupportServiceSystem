@@ -1,4 +1,6 @@
-﻿namespace ProjectSupport
+﻿using System.Windows.Forms;
+
+namespace ProjectSupport
 {
     partial class buyerUserControl
     {
@@ -44,6 +46,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(204, 326);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // deliveryBt
             // 
@@ -93,5 +96,10 @@
         private System.Windows.Forms.Button deliveryBt;
         private System.Windows.Forms.Button paymentBt;
         private System.Windows.Forms.Button purchaseBt;
+
+        public Panel Panel1 { get => panel1; set => panel1 = value; }
+        public Button DeliveryBt { get => deliveryBt; set => deliveryBt = value; }
+        public Button PaymentBt { get => paymentBt; set => paymentBt = value; }
+        public Button PurchaseBt { get => purchaseBt; set => purchaseBt = value; }
     }
 }

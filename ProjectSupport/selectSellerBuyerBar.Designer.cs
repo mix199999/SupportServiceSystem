@@ -1,4 +1,6 @@
-﻿namespace ProjectSupport
+﻿using System.Windows.Forms;
+
+namespace ProjectSupport
 {
     partial class selectSellerBuyerBar
     {
@@ -62,6 +64,7 @@
             this.naviPanelSellBuy.Name = "naviPanelSellBuy";
             this.naviPanelSellBuy.Size = new System.Drawing.Size(204, 326);
             this.naviPanelSellBuy.TabIndex = 7;
+            this.naviPanelSellBuy.Paint += new System.Windows.Forms.PaintEventHandler(this.naviPanelSellBuy_Paint);
             // 
             // selectSellerBuyerBar
             // 
@@ -80,5 +83,9 @@
         private System.Windows.Forms.Button buyerBt;
         private System.Windows.Forms.Button sellerBt;
         private System.Windows.Forms.Panel naviPanelSellBuy;
+
+        public Button BuyerBt { get => buyerBt; set => buyerBt = value; }
+        public Button SellerBt { get => sellerBt; set => sellerBt = value; }
+        public Panel NaviPanelSellBuy { get => naviPanelSellBuy; set => naviPanelSellBuy = value; }
     }
 }

@@ -10,28 +10,60 @@ using System.Windows.Forms;
 
 namespace ProjectSupport
 {
+
+ 
     public partial class buyerUserControl : UserControl
     {
-        public bool purchaseBtStance = false;
-        public bool paymentBtStance = false;
-        //pu
-        
+        public EventHandler purchaseClicked;
+        public EventHandler paymentClicked;
+        public EventHandler deliveryClicked;
+
+       
+
         public buyerUserControl()
         {
             InitializeComponent();
-        }
 
+        }
+      
+       
+        //protected virtual void OnButtonClicked(EventArgs e)
+        //{
+        //    EventHandler handler = ButtonClicked;
+        //    handler?.Invoke(this, e);
+
+        //}
         private void purchaseBt_Click(object sender, EventArgs e)
         {
-            purchaseBtStance = true;
+            
+            Button button = (Button)sender;
+            button.Tag = AnswearType.buyerPurchase;
+            object tag = button.Tag;
+            EventHandler handler = purchaseClicked;
+            handler?.Invoke(this, e);
+            
+            
         }
 
         private void paymentBt_Click(object sender, EventArgs e)
         {
-
+            Button button = (Button)sender;
+            button.Tag = AnswearType.buyerPayment;
+            object tag = button.Tag;
+            EventHandler handler = paymentClicked;
+            handler?.Invoke(this, e);
         }
 
         private void deliveryBt_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.Tag = AnswearType.buyerDelivery;
+            object tag = button.Tag;
+            EventHandler handler = deliveryClicked;
+            handler?.Invoke(this, e);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
