@@ -59,6 +59,9 @@ namespace ProjectSupport
 
         }
 
-       
+        private void answearRT_TextChanged(object sender, EventArgs e)
+        {
+            answearRT.ReadOnly = true;
+        }
     }
 }

@@ -32,5 +32,7 @@ namespace ProjectSupport
         public virtual DbSet<CaseTab> CaseTab { get; set; }
         public virtual DbSet<Answears> Answears { get; set; }
         public virtual DbSet<AnswearsTypes> AnswearsTypes { get; set; }
+        public virtual DbSet<AdminChat> AdminChat { get; set; }
+        public virtual DbSet<UserChat> UserChat { get; set; }
     }
 }

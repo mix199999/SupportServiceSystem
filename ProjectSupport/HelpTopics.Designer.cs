@@ -31,10 +31,10 @@ namespace ProjectSupport
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.answearRT = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.naviPanel = new System.Windows.Forms.Panel();
             this.backBt = new System.Windows.Forms.Label();
-            this.answearRT = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,6 +45,15 @@ namespace ProjectSupport
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(417, 413);
             this.panel1.TabIndex = 0;
+            // 
+            // answearRT
+            // 
+            this.answearRT.Location = new System.Drawing.Point(3, 3);
+            this.answearRT.Name = "answearRT";
+            this.answearRT.Size = new System.Drawing.Size(411, 407);
+            this.answearRT.TabIndex = 0;
+            this.answearRT.Text = "";
+            this.answearRT.TextChanged += new System.EventHandler(this.answearRT_TextChanged);
             // 
             // label1
             // 
@@ -73,18 +82,11 @@ namespace ProjectSupport
             this.backBt.Text = "Back";
             this.backBt.Click += new System.EventHandler(this.backBt_Click);
             // 
-            // answearRT
-            // 
-            this.answearRT.Location = new System.Drawing.Point(3, 3);
-            this.answearRT.Name = "answearRT";
-            this.answearRT.Size = new System.Drawing.Size(411, 407);
-            this.answearRT.TabIndex = 0;
-            this.answearRT.Text = "";
-            // 
             // HelpTopics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.backBt);
             this.Controls.Add(this.naviPanel);
             this.Controls.Add(this.label1);

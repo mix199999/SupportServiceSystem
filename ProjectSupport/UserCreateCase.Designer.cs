@@ -2,7 +2,7 @@
 
 namespace ProjectSupport
 {
-    partial class UserPanel
+    partial class UserCreateCase
     {
         /// <summary> 
         /// Wymagana zmienna projektanta.
@@ -36,12 +36,13 @@ namespace ProjectSupport
             this.titleTx = new System.Windows.Forms.TextBox();
             this.descriptionRT = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.sendBt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // transactionTb
             // 
             this.transactionTb.AutoSize = true;
-            this.transactionTb.Location = new System.Drawing.Point(14, 69);
+            this.transactionTb.Location = new System.Drawing.Point(127, 91);
             this.transactionTb.Name = "transactionTb";
             this.transactionTb.Size = new System.Drawing.Size(78, 13);
             this.transactionTb.TabIndex = 1;
@@ -51,7 +52,7 @@ namespace ProjectSupport
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(108, 66);
+            this.comboBox1.Location = new System.Drawing.Point(234, 83);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 2;
@@ -59,7 +60,7 @@ namespace ProjectSupport
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 39);
+            this.label1.Location = new System.Drawing.Point(160, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 3;
@@ -67,40 +68,53 @@ namespace ProjectSupport
             // 
             // titleTx
             // 
-            this.titleTx.Location = new System.Drawing.Point(108, 39);
+            this.titleTx.Location = new System.Drawing.Point(234, 46);
             this.titleTx.Name = "titleTx";
             this.titleTx.Size = new System.Drawing.Size(121, 20);
             this.titleTx.TabIndex = 4;
             // 
             // descriptionRT
             // 
-            this.descriptionRT.Location = new System.Drawing.Point(108, 117);
+            this.descriptionRT.Location = new System.Drawing.Point(214, 143);
             this.descriptionRT.Name = "descriptionRT";
-            this.descriptionRT.Size = new System.Drawing.Size(121, 209);
+            this.descriptionRT.Size = new System.Drawing.Size(407, 321);
             this.descriptionRT.TabIndex = 5;
             this.descriptionRT.Text = "";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 120);
+            this.label2.Location = new System.Drawing.Point(127, 146);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Description:";
             // 
-            // UserPanel
+            // sendBt
+            // 
+            this.sendBt.Location = new System.Drawing.Point(654, 474);
+            this.sendBt.Name = "sendBt";
+            this.sendBt.Size = new System.Drawing.Size(75, 23);
+            this.sendBt.TabIndex = 7;
+            this.sendBt.Text = "button1";
+            this.sendBt.UseVisualStyleBackColor = true;
+            this.sendBt.Click += new System.EventHandler(this.sendBt_Click);
+            // 
+            // UserCreateCase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.sendBt);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.descriptionRT);
             this.Controls.Add(this.titleTx);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.transactionTb);
-            this.Name = "UserPanel";
-            this.Size = new System.Drawing.Size(325, 360);
+            this.Name = "UserCreateCase";
+            this.Size = new System.Drawing.Size(744, 521);
+            this.Load += new System.EventHandler(this.UserCreateCase_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,6 +127,7 @@ namespace ProjectSupport
         private System.Windows.Forms.TextBox titleTx;
         private System.Windows.Forms.RichTextBox descriptionRT;
         private System.Windows.Forms.Label label2;
+        private Button sendBt;
 
         public Label TransactionTb { get => transactionTb; set => transactionTb = value; }
         public ComboBox ComboBox1 { get => comboBox1; set => comboBox1 = value; }
@@ -120,6 +135,6 @@ namespace ProjectSupport
         public TextBox TitleTx { get => titleTx; set => titleTx = value; }
         public RichTextBox DescriptionRT { get => descriptionRT; set => descriptionRT = value; }
         public Label Label2 { get => label2; set => label2 = value; }
-        
+        public Button SendBt { get => sendBt; set => sendBt = value; }
     }
 }
