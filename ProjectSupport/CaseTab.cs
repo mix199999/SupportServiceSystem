@@ -14,15 +14,24 @@ namespace ProjectSupport
     
     public partial class CaseTab
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public CaseTab()
+        {
+            this.AdminChat = new HashSet<AdminChat>();
+            this.UserChat = new HashSet<UserChat>();
+        }
+    
         public int CaseId { get; set; }
         public Nullable<int> TransactionId { get; set; }
         public Nullable<int> UserId { get; set; }
         public string CaseStatus { get; set; }
-        public string UserText { get; set; }
-        public string AdminText { get; set; }
         public string CaseName { get; set; }
     
         public virtual Transactions Transactions { get; set; }
         public virtual Users Users { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AdminChat> AdminChat { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserChat> UserChat { get; set; }
     }
 }

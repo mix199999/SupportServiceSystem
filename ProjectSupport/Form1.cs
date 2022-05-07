@@ -17,7 +17,7 @@ namespace ProjectSupport
             InitializeComponent();
         }
 
-        UserPanel userPanel = new UserPanel();
+        UserCreateCase userPanel = new UserCreateCase();
 
         private void Form1_Load(object sender, EventArgs e)
         {

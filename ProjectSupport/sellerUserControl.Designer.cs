@@ -1,4 +1,6 @@
-﻿namespace ProjectSupport
+﻿using System.Windows.Forms;
+
+namespace ProjectSupport
 {
     partial class sellerUserControl
     {
@@ -29,49 +31,53 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.promotingBt = new System.Windows.Forms.Button();
+            this.commissionsBt = new System.Windows.Forms.Button();
+            this.casesBt = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.promotingBt);
+            this.panel1.Controls.Add(this.commissionsBt);
+            this.panel1.Controls.Add(this.casesBt);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(204, 326);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // button3
+            // promotingBt
             // 
-            this.button3.Location = new System.Drawing.Point(22, 212);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(163, 88);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Methods of promoting offers";
-            this.button3.UseVisualStyleBackColor = true;
+            this.promotingBt.Location = new System.Drawing.Point(22, 212);
+            this.promotingBt.Name = "promotingBt";
+            this.promotingBt.Size = new System.Drawing.Size(163, 88);
+            this.promotingBt.TabIndex = 2;
+            this.promotingBt.Text = "Methods of promoting offers";
+            this.promotingBt.UseVisualStyleBackColor = true;
+            this.promotingBt.Click += new System.EventHandler(this.promotingBt_Click);
             // 
-            // button2
+            // commissionsBt
             // 
-            this.button2.Location = new System.Drawing.Point(22, 118);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(163, 88);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Commissions";
-            this.button2.UseVisualStyleBackColor = true;
+            this.commissionsBt.Location = new System.Drawing.Point(22, 118);
+            this.commissionsBt.Name = "commissionsBt";
+            this.commissionsBt.Size = new System.Drawing.Size(163, 88);
+            this.commissionsBt.TabIndex = 1;
+            this.commissionsBt.Text = "Commissions";
+            this.commissionsBt.UseVisualStyleBackColor = true;
+            this.commissionsBt.Click += new System.EventHandler(this.commissionsBt_Click);
             // 
-            // button1
+            // casesBt
             // 
-            this.button1.Location = new System.Drawing.Point(22, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 88);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Cases";
-            this.button1.UseVisualStyleBackColor = true;
+            this.casesBt.Location = new System.Drawing.Point(22, 24);
+            this.casesBt.Name = "casesBt";
+            this.casesBt.Size = new System.Drawing.Size(163, 88);
+            this.casesBt.TabIndex = 0;
+            this.casesBt.Text = "Cases";
+            this.casesBt.UseVisualStyleBackColor = true;
+            this.casesBt.Click += new System.EventHandler(this.casesBt_Click);
             // 
             // sellerUserControl
             // 
@@ -88,8 +94,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button casesBt;
+        private System.Windows.Forms.Button promotingBt;
+        private System.Windows.Forms.Button commissionsBt;
+
+        public Panel Panel1 { get => panel1; set => panel1 = value; }
+        public Button PromotingBt { get => promotingBt; set => promotingBt = value; }
+        public Button CommissionsBt { get => commissionsBt; set => commissionsBt = value; }
+        public Button CasesBt { get => casesBt; set => casesBt = value; }
     }
 }

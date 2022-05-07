@@ -41,6 +41,7 @@
             this.loginTB.Name = "loginTB";
             this.loginTB.Size = new System.Drawing.Size(119, 20);
             this.loginTB.TabIndex = 0;
+            this.loginTB.Text = "User1";
             // 
             // passwdTB
             // 
@@ -48,6 +49,7 @@
             this.passwdTB.Name = "passwdTB";
             this.passwdTB.Size = new System.Drawing.Size(119, 20);
             this.passwdTB.TabIndex = 1;
+            this.passwdTB.Text = "1234";
             // 
             // loginBt
             // 
@@ -88,6 +90,7 @@
             this.Controls.Add(this.passwdTB);
             this.Controls.Add(this.loginTB);
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);

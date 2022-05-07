@@ -19,6 +19,8 @@ namespace ProjectSupport
         {
             this.Transactions = new HashSet<Transactions>();
             this.CaseTab = new HashSet<CaseTab>();
+            this.AdminChat = new HashSet<AdminChat>();
+            this.UserChat = new HashSet<UserChat>();
         }
     
         public int UserId { get; set; }
@@ -31,5 +33,9 @@ namespace ProjectSupport
         public virtual ICollection<Transactions> Transactions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CaseTab> CaseTab { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AdminChat> AdminChat { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserChat> UserChat { get; set; }
     }
 }

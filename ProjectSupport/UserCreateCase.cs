@@ -10,29 +10,33 @@ using System.Windows.Forms;
 
 namespace ProjectSupport
 {
-    public partial class UserPanel : UserControl
+    public partial class UserCreateCase : UserControl
     {
+        public EventHandler SendCase;
         public bool IsLoggedIn { get; set; }
-        public UserPanel()
+        public UserCreateCase()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-            IsLoggedIn = true;
-
-        }
+        
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
+
         private void sendBt_Click(object sender, EventArgs e)
         {
            
+            EventHandler handler = SendCase;
+            handler?.Invoke(this, e);
+        }
+
+        private void UserCreateCase_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
