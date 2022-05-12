@@ -16,14 +16,26 @@ namespace ProjectSupport
         public EventHandler buyerClick;
         public EventHandler sellerClick;
 
+       
+
         public sellerUserControl sellerPanel = new sellerUserControl();
         public buyerUserControl buyerPanel = new buyerUserControl();
         public selectSellerBuyerBar()
         {
             InitializeComponent();
 
-        
+
            
+            foreach (var button in buyerPanel.Controls.OfType<Button>())
+            {
+                button.BackColor = Colors.ColorsList[7];
+                button.FlatAppearance.BorderColor = Colors.ColorsList[3];
+            }
+            foreach (var button in sellerPanel.Controls.OfType<Button>())
+            {
+                button.BackColor = Colors.ColorsList[7];
+                button.FlatAppearance.BorderColor = Colors.ColorsList[3];
+            }
 
         }
 
@@ -43,6 +55,11 @@ namespace ProjectSupport
 
         private void naviPanelSellBuy_Paint(object sender, PaintEventArgs e)
         {
+            foreach (var button in Controls.OfType<Button>())
+            {
+                button.BackColor = Colors.ColorsList[7];
+                button.FlatAppearance.BorderColor = Colors.ColorsList[3];
+            }
             naviPanelSellBuy.Controls.Add(buyerPanel);
             buyerPanel.Dock = DockStyle.Fill;
             buyerPanel.Visible = false;
@@ -50,6 +67,7 @@ namespace ProjectSupport
             sellerPanel.Visible = false;
 
             naviPanelSellBuy.Controls.Add(sellerPanel);
+            
 
         }
     }

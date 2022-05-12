@@ -20,8 +20,9 @@
           </Key>
           <Property Name="AnswearId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AnswearType" Type="varchar" MaxLength="20" />
-          <Property Name="AnswearText" Type="varchar" MaxLength="100" />
+          <Property Name="AnswearText" Type="varchar" MaxLength="500" />
           <Property Name="AnswearTypeId" Type="int" />
+          <Property Name="AnswearTitle" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="AnswearsTypes">
           <Key>
@@ -515,9 +516,10 @@
           </Key>
           <Property Name="AnswearId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="AnswearType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="AnswearText" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AnswearText" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="AnswearTypeId" Type="Int32" />
           <NavigationProperty Name="AnswearsTypes" Relationship="UsersDB.FK__Answears__Answea__0D7A0286" FromRole="Answears" ToRole="AnswearsTypes" />
+          <Property Name="AnswearTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="AnswearsTypes">
           <Key>
@@ -716,6 +718,7 @@
           <EntitySetMapping Name="Answears">
             <EntityTypeMapping TypeName="UsersDB.Answears">
               <MappingFragment StoreEntitySet="Answears">
+                <ScalarProperty Name="AnswearTitle" ColumnName="AnswearTitle" />
                 <ScalarProperty Name="AnswearTypeId" ColumnName="AnswearTypeId" />
                 <ScalarProperty Name="AnswearText" ColumnName="AnswearText" />
                 <ScalarProperty Name="AnswearType" ColumnName="AnswearType" />

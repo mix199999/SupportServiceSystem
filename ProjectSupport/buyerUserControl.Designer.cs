@@ -50,6 +50,8 @@ namespace ProjectSupport
             // 
             // deliveryBt
             // 
+            this.deliveryBt.FlatAppearance.BorderSize = 3;
+            this.deliveryBt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deliveryBt.Location = new System.Drawing.Point(15, 217);
             this.deliveryBt.Name = "deliveryBt";
             this.deliveryBt.Size = new System.Drawing.Size(163, 88);
@@ -60,6 +62,8 @@ namespace ProjectSupport
             // 
             // paymentBt
             // 
+            this.paymentBt.FlatAppearance.BorderSize = 3;
+            this.paymentBt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.paymentBt.Location = new System.Drawing.Point(15, 123);
             this.paymentBt.Name = "paymentBt";
             this.paymentBt.Size = new System.Drawing.Size(163, 88);
@@ -70,6 +74,8 @@ namespace ProjectSupport
             // 
             // purchaseBt
             // 
+            this.purchaseBt.FlatAppearance.BorderSize = 3;
+            this.purchaseBt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.purchaseBt.Location = new System.Drawing.Point(15, 29);
             this.purchaseBt.Name = "purchaseBt";
             this.purchaseBt.Size = new System.Drawing.Size(163, 88);
@@ -80,8 +86,7 @@ namespace ProjectSupport
             // 
             // buyerUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.panel1);
             this.Name = "buyerUserControl";
             this.Size = new System.Drawing.Size(204, 326);

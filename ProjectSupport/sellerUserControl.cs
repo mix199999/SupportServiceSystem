@@ -18,13 +18,22 @@ namespace ProjectSupport
         public sellerUserControl()
         {
             InitializeComponent();
+            promotingBt.BackColor = Colors.ColorsList[7];
+            promotingBt.FlatAppearance.BorderColor = Colors.ColorsList[3];
+
+
         }
 
        
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            
+            foreach(var b in Controls.OfType<Button>())
+            {
+                
+                b.FlatAppearance.BorderColor= Colors.ColorsList[3];
+            }
+            panel1.BackColor = Colors.ColorsList[7];
         }
 
         private void promotingBt_Click(object sender, EventArgs e)

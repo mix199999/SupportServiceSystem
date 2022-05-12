@@ -18,6 +18,14 @@ namespace ProjectSupport
         public UserOldCasesUC()
         {
             InitializeComponent();
+
+            this.BackColor = Colors.ColorsList[7];
+            this.ForeColor = Colors.ColorsList[3];
+            this.CasesListBox.BackColor = Colors.ColorsList[5];
+            this.CasesListBox.ForeColor = Colors.ColorsList[3];
+            this.ReplyRt.BackColor = Colors.ColorsList[5];
+            this.ReplyRt.ForeColor = Colors.ColorsList[3];
+
         }
 
         private void UserOldCasesUC_Load(object sender, EventArgs e)
@@ -48,6 +56,11 @@ namespace ProjectSupport
         }
 
         private void respondsRt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void testTx_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -36,7 +36,15 @@ namespace ProjectSupport
 
         private void UserCreateCase_Load(object sender, EventArgs e)
         {
-
+            this.BackColor = Colors.ColorsList[7];
+            this.DescriptionRT.BackColor = Colors.ColorsList[5];
+            this.TitleTx.BackColor = Colors.ColorsList[5];
+            this.ComboBox1.BackColor = Colors.ColorsList[5];
+            this.ComboBox1.ForeColor = Colors.ColorsList[3];
+            this.TitleTx.ForeColor = Colors.ColorsList[3];
+            this.DescriptionRT.ForeColor = Colors.ColorsList[3];
+            
+           
         }
     }
 }

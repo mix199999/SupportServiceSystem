@@ -65,7 +65,11 @@ namespace ProjectSupport
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
+             foreach (var button in Controls.OfType<Button>())
+            {
+                button.BackColor = Colors.ColorsList[7];
+                button.FlatAppearance.BorderColor = Colors.ColorsList[3];
+            }
         }
     }
 }

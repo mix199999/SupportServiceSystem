@@ -51,6 +51,8 @@ namespace ProjectSupport
             // 
             // promotingBt
             // 
+            this.promotingBt.FlatAppearance.BorderSize = 3;
+            this.promotingBt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.promotingBt.Location = new System.Drawing.Point(22, 212);
             this.promotingBt.Name = "promotingBt";
             this.promotingBt.Size = new System.Drawing.Size(163, 88);
@@ -61,6 +63,8 @@ namespace ProjectSupport
             // 
             // commissionsBt
             // 
+            this.commissionsBt.FlatAppearance.BorderSize = 3;
+            this.commissionsBt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.commissionsBt.Location = new System.Drawing.Point(22, 118);
             this.commissionsBt.Name = "commissionsBt";
             this.commissionsBt.Size = new System.Drawing.Size(163, 88);
@@ -71,6 +75,8 @@ namespace ProjectSupport
             // 
             // casesBt
             // 
+            this.casesBt.FlatAppearance.BorderSize = 3;
+            this.casesBt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.casesBt.Location = new System.Drawing.Point(22, 24);
             this.casesBt.Name = "casesBt";
             this.casesBt.Size = new System.Drawing.Size(163, 88);
@@ -81,8 +87,7 @@ namespace ProjectSupport
             // 
             // sellerUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.panel1);
             this.Name = "sellerUserControl";
             this.Size = new System.Drawing.Size(204, 327);
