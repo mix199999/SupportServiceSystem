@@ -80,6 +80,7 @@ namespace ProjectSupport
             this.purchaseBt.Name = "purchaseBt";
             this.purchaseBt.Size = new System.Drawing.Size(163, 88);
             this.purchaseBt.TabIndex = 0;
+            this.purchaseBt.Tag = "buyerPurchase";
             this.purchaseBt.Text = "Purchase";
             this.purchaseBt.UseVisualStyleBackColor = true;
             this.purchaseBt.Click += new System.EventHandler(this.purchaseBt_Click);

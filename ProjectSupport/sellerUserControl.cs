@@ -42,7 +42,7 @@ namespace ProjectSupport
             button.Tag = AnswearType.sellerPromoting;
             object tag = button.Tag;
             EventHandler handler = promoClicked;
-            handler?.Invoke(this, e);
+            handler?.Invoke(button, e);
         }
 
         private void commissionsBt_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace ProjectSupport
             button.Tag = AnswearType.sellerCommissions;
             object tag = button.Tag;
             EventHandler handler = commmissionsClicked;
-            handler?.Invoke(this, e);
+            handler?.Invoke(button, e);
         }
 
         private void casesBt_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace ProjectSupport
             button.Tag = AnswearType.sellerCases;
             object tag = button.Tag;
             EventHandler handler = caseClicked;
-            handler?.Invoke(this, e);
+            handler?.Invoke(button, e);
         }
     }
 }

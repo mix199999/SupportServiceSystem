@@ -58,8 +58,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1021, 629);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseClick);
+   
             // 
             // naviUserPanel
             // 
@@ -73,7 +72,7 @@
             this.naviUserPanel.Name = "naviUserPanel";
             this.naviUserPanel.Size = new System.Drawing.Size(242, 688);
             this.naviUserPanel.TabIndex = 7;
-            this.naviUserPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.naviUserPanel_Paint);
+            this.naviUserPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.NaviUserPanel_Paint);
             this.naviUserPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseDown);
             this.naviUserPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseMove);
             this.naviUserPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseUp);
@@ -98,7 +97,7 @@
             this.userNameLb.TabIndex = 7;
             this.userNameLb.Text = "label1";
             this.userNameLb.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.userNameLb.Click += new System.EventHandler(this.userNameLb_Click);
+         
             // 
             // showHelpBt
             // 
@@ -113,7 +112,7 @@
             this.showHelpBt.TabIndex = 6;
             this.showHelpBt.Text = "Help";
             this.showHelpBt.UseVisualStyleBackColor = true;
-            this.showHelpBt.Click += new System.EventHandler(this.showHelpBt_Click);
+            this.showHelpBt.Click += new System.EventHandler(this.ShowHelpBt_Click);
             // 
             // oldCaseBt
             // 
@@ -128,7 +127,7 @@
             this.oldCaseBt.TabIndex = 5;
             this.oldCaseBt.Text = "Your cases";
             this.oldCaseBt.UseVisualStyleBackColor = true;
-            this.oldCaseBt.Click += new System.EventHandler(this.oldCaseBt_Click);
+            this.oldCaseBt.Click += new System.EventHandler(this.OldCaseBt_Click);
             // 
             // openCaseBt
             // 
@@ -143,7 +142,7 @@
             this.openCaseBt.TabIndex = 3;
             this.openCaseBt.Text = "New case";
             this.openCaseBt.UseVisualStyleBackColor = true;
-            this.openCaseBt.Click += new System.EventHandler(this.openCaseBt_Click);
+            this.openCaseBt.Click += new System.EventHandler(this.OpenCaseBt_Click);
             // 
             // panel2
             // 
@@ -156,7 +155,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1278, 63);
             this.panel2.TabIndex = 8;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+         
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseMove);
             this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseUp);
@@ -169,22 +168,22 @@
             this.pictureBox2.Size = new System.Drawing.Size(20, 28);
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
             // 
             // searchClick
             // 
             this.searchClick.ImageLocation = "C:\\SupportProject\\SupportServiceSystem\\icons\\searchIcon48.png";
-            this.searchClick.Location = new System.Drawing.Point(838, 20);
+            this.searchClick.Location = new System.Drawing.Point(838, 17);
             this.searchClick.Name = "searchClick";
             this.searchClick.Size = new System.Drawing.Size(37, 32);
             this.searchClick.TabIndex = 2;
             this.searchClick.TabStop = false;
-            this.searchClick.Click += new System.EventHandler(this.searchClick_Click);
+            this.searchClick.Click += new System.EventHandler(this.SearchClick_Click);
             // 
             // searchTx
             // 
             this.searchTx.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.searchTx.Location = new System.Drawing.Point(584, 20);
+            this.searchTx.Location = new System.Drawing.Point(584, 17);
             this.searchTx.Name = "searchTx";
             this.searchTx.Size = new System.Drawing.Size(248, 22);
             this.searchTx.TabIndex = 1;

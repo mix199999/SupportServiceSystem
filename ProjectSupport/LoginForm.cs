@@ -16,6 +16,8 @@ namespace ProjectSupport
 
     public partial class LoginForm : Form
     {
+        RegistrationUC registrationPage = new RegistrationUC();
+
         public static List<Color> appearanceColor = new List<Color>()
             {
                 Color.FromArgb(24, 49, 83), // green

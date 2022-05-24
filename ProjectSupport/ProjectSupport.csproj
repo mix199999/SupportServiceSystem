@@ -119,6 +119,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrationUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RegistrationUC.Designer.cs">
+      <DependentUpon>RegistrationUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="resultBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -196,6 +202,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RegistrationUC.resx">
+      <DependentUpon>RegistrationUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="resultBox.resx">
       <DependentUpon>resultBox.cs</DependentUpon>
     </EmbeddedResource>

@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1c695d8db35748e9a8ccefc2818e13f0" Name="Diagram1" ZoomLevel="69">
+      <Diagram DiagramId="1c695d8db35748e9a8ccefc2818e13f0" Name="Diagram1" ZoomLevel="101">
         <EntityTypeShape EntityType="UsersDB.Items" Width="1.5" PointX="12.25" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UsersDB.Roles" Width="1.5" PointX="10.375" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsersDB.Roles" Width="1.5" PointX="9.875" PointY="5.625" IsExpanded="true" />
         <EntityTypeShape EntityType="UsersDB.Transactions" Width="1.5" PointX="13" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="UsersDB.Users" Width="1.5" PointX="10.375" PointY="1.375" IsExpanded="true" />
         <AssociationConnector Association="UsersDB.FK__Transacti__ItemI__73BA3083" ManuallyRouted="false" />
@@ -16,7 +16,7 @@
         <AssociationConnector Association="UsersDB.FK__CaseTab__Transac__76969D2E" />
         <AssociationConnector Association="UsersDB.FK__CaseTab__UserId__778AC167" />
         <EntityTypeShape EntityType="UsersDB.Answears" Width="1.5" PointX="19.875" PointY="7.25" />
-        <EntityTypeShape EntityType="UsersDB.AnswearsTypes" Width="1.5" PointX="16.125" PointY="7.875" />
+        <EntityTypeShape EntityType="UsersDB.AnswearsTypes" Width="1.5" PointX="16.875" PointY="7.75" />
         <AssociationConnector Association="UsersDB.FK__Answears__Answea__0D7A0286" />
         <EntityTypeShape EntityType="UsersDB.AdminChat" Width="1.5" PointX="17.875" PointY="3.75" />
         <EntityTypeShape EntityType="UsersDB.UserChat" Width="1.5" PointX="20.875" PointY="3.375" />

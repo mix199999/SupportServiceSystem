@@ -35,14 +35,14 @@ namespace ProjectSupport
         //}
         private void purchaseBt_Click(object sender, EventArgs e)
         {
-            
-            Button button = (Button)sender;
+
+            Button button = sender as Button;
             button.Tag = AnswearType.buyerPurchase;
             object tag = button.Tag;
             EventHandler handler = purchaseClicked;
-            handler?.Invoke(this, e);
-            
-            
+            handler?.Invoke(button, e);
+
+
         }
 
         private void paymentBt_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace ProjectSupport
             button.Tag = AnswearType.buyerPayment;
             object tag = button.Tag;
             EventHandler handler = paymentClicked;
-            handler?.Invoke(this, e);
+            handler?.Invoke(button, e);
         }
 
         private void deliveryBt_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace ProjectSupport
             button.Tag = AnswearType.buyerDelivery;
             object tag = button.Tag;
             EventHandler handler = deliveryClicked;
-            handler?.Invoke(this, e);
+            handler?.Invoke(button, e);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

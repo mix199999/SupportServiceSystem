@@ -74,7 +74,7 @@ namespace ProjectSupport
             this.passwdTB.MinimumSize = new System.Drawing.Size(0, 24);
             this.passwdTB.Name = "passwdTB";
             this.passwdTB.PasswordChar = '*';
-            this.passwdTB.Size = new System.Drawing.Size(138, 19);
+            this.passwdTB.Size = new System.Drawing.Size(138, 24);
             this.passwdTB.TabIndex = 1;
             this.passwdTB.Text = "1234";
             this.passwdTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -87,7 +87,7 @@ namespace ProjectSupport
             this.loginBt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.loginBt.ForeColor = System.Drawing.SystemColors.Control;
-            this.loginBt.Location = new System.Drawing.Point(114, 341);
+            this.loginBt.Location = new System.Drawing.Point(115, 329);
             this.loginBt.Name = "loginBt";
             this.loginBt.Size = new System.Drawing.Size(78, 42);
             this.loginBt.TabIndex = 2;
@@ -104,7 +104,7 @@ namespace ProjectSupport
             this.loginTB.Location = new System.Drawing.Point(85, 245);
             this.loginTB.MinimumSize = new System.Drawing.Size(0, 24);
             this.loginTB.Name = "loginTB";
-            this.loginTB.Size = new System.Drawing.Size(138, 19);
+            this.loginTB.Size = new System.Drawing.Size(138, 24);
             this.loginTB.TabIndex = 0;
             this.loginTB.Text = "User1";
             this.loginTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

@@ -19,9 +19,7 @@ namespace ProjectSupport
     {
         public EventHandler backBtClickHelp;
 
-        public selectSellerBuyerBar naviSelect = new selectSellerBuyerBar();
-        public sellerUserControl naviSeller = new sellerUserControl();
-        public buyerUserControl naviBuyer = new buyerUserControl();
+       
 
 
         public HelpTopics()
@@ -34,10 +32,8 @@ namespace ProjectSupport
             //naviPanel.Controls.Add(naviBuyer);
 
             InitializeComponent();
-            setDockHide(naviSelect);
-            setDockHide(naviBuyer);
-            setDockHide(naviSeller);
-
+           
+           
 
         }
 
@@ -62,11 +58,7 @@ namespace ProjectSupport
             //}
 
           //  naviSelect.BackColor = Color.Red;
-            foreach(Control b in naviSelect.Controls)
-            {
-                if(b is Button)
-                b.BackColor = Color.Red;
-            }
+           
         }
 
         private void faqUserControl_Load(object sender, EventArgs e)
@@ -80,17 +72,7 @@ namespace ProjectSupport
             click?.Invoke(this, e);
         }
 
-        private void setDockHide(UserControl cont)
-        {
-            naviPanel.Controls.Add(cont);
-            cont.Dock = DockStyle.Fill;
-            cont.Visible = false;
-            if(cont.Name ==naviSelect.Name)
-            {
-                cont.Visible = true;
-            }
-
-        }
+       
 
         private void answearRT_TextChanged(object sender, EventArgs e)
         {
