@@ -171,11 +171,11 @@
     <Compile Include="UserCreateCase.Designer.cs">
       <DependentUpon>UserCreateCase.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserOldCasesUC.cs">
+    <Compile Include="UserCasesUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserOldCasesUC.Designer.cs">
-      <DependentUpon>UserOldCasesUC.cs</DependentUpon>
+    <Compile Include="UserCasesUC.Designer.cs">
+      <DependentUpon>UserCasesUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Users.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -223,8 +223,8 @@
     <EmbeddedResource Include="UserCreateCase.resx">
       <DependentUpon>UserCreateCase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserOldCasesUC.resx">
-      <DependentUpon>UserOldCasesUC.cs</DependentUpon>
+    <EmbeddedResource Include="UserCasesUC.resx">
+      <DependentUpon>UserCasesUC.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

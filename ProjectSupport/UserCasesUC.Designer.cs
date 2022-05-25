@@ -2,7 +2,7 @@
 
 namespace ProjectSupport
 {
-    partial class UserOldCasesUC
+    partial class UserCasesUC
     {
         /// <summary> 
         /// Wymagana zmienna projektanta.
@@ -30,15 +30,18 @@ namespace ProjectSupport
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.replyBt = new System.Windows.Forms.Button();
             this.yourCasesLb = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.userReplyRt = new System.Windows.Forms.RichTextBox();
             this.replyRt = new System.Windows.Forms.RichTextBox();
             this.statusLb = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.titleLb = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.casesListBox = new System.Windows.Forms.ListBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +70,7 @@ namespace ProjectSupport
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.userReplyRt);
             this.panel1.Controls.Add(this.replyRt);
             this.panel1.Controls.Add(this.statusLb);
             this.panel1.Controls.Add(this.replyBt);
@@ -78,19 +82,28 @@ namespace ProjectSupport
             this.panel1.Size = new System.Drawing.Size(725, 571);
             this.panel1.TabIndex = 4;
             // 
+            // userReplyRt
+            // 
+            this.userReplyRt.Location = new System.Drawing.Point(162, 425);
+            this.userReplyRt.Name = "userReplyRt";
+            this.userReplyRt.Size = new System.Drawing.Size(389, 115);
+            this.userReplyRt.TabIndex = 6;
+            this.userReplyRt.Text = "";
+            // 
             // replyRt
             // 
             this.replyRt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.replyRt.Location = new System.Drawing.Point(96, 85);
+            this.replyRt.Location = new System.Drawing.Point(3, 68);
             this.replyRt.Name = "replyRt";
-            this.replyRt.Size = new System.Drawing.Size(410, 280);
+            this.replyRt.ReadOnly = true;
+            this.replyRt.Size = new System.Drawing.Size(711, 340);
             this.replyRt.TabIndex = 5;
             this.replyRt.Text = "";
             // 
             // statusLb
             // 
             this.statusLb.AutoSize = true;
-            this.statusLb.Location = new System.Drawing.Point(565, 45);
+            this.statusLb.Location = new System.Drawing.Point(623, 11);
             this.statusLb.Name = "statusLb";
             this.statusLb.Size = new System.Drawing.Size(82, 20);
             this.statusLb.TabIndex = 3;
@@ -100,7 +113,7 @@ namespace ProjectSupport
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(502, 45);
+            this.label4.Location = new System.Drawing.Point(560, 11);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 20);
             this.label4.TabIndex = 2;
@@ -109,7 +122,7 @@ namespace ProjectSupport
             // titleLb
             // 
             this.titleLb.AutoSize = true;
-            this.titleLb.Location = new System.Drawing.Point(312, 11);
+            this.titleLb.Location = new System.Drawing.Point(339, 10);
             this.titleLb.Name = "titleLb";
             this.titleLb.Size = new System.Drawing.Size(62, 20);
             this.titleLb.TabIndex = 1;
@@ -119,7 +132,7 @@ namespace ProjectSupport
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(260, 11);
+            this.label2.Location = new System.Drawing.Point(281, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 20);
             this.label2.TabIndex = 0;
@@ -134,7 +147,12 @@ namespace ProjectSupport
             this.casesListBox.Size = new System.Drawing.Size(212, 104);
             this.casesListBox.TabIndex = 5;
             // 
-            // UserOldCasesUC
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // UserCasesUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -142,7 +160,7 @@ namespace ProjectSupport
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.yourCasesLb);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.Name = "UserOldCasesUC";
+            this.Name = "UserCasesUC";
             this.Size = new System.Drawing.Size(1033, 629);
             this.Load += new System.EventHandler(this.UserOldCasesUC_Load);
             this.panel1.ResumeLayout(false);
@@ -162,6 +180,8 @@ namespace ProjectSupport
         private System.Windows.Forms.Label titleLb;
         private System.Windows.Forms.Label label2;
         private ListBox casesListBox;
+        private RichTextBox userReplyRt;
+        private ContextMenuStrip contextMenuStrip1;
 
         public Button ReplyBt { get => replyBt; set => replyBt = value; }
         public ListBox CasesListBox { get => casesListBox; set => casesListBox = value; }
@@ -173,8 +193,6 @@ namespace ProjectSupport
         public Label Label4 { get => label4; set => label4 = value; }
         public Label TitleLb { get => titleLb; set => titleLb = value; }
         public Label Label2 { get => label2; set => label2 = value; }
-        
-       
-       
+        public RichTextBox UserReplyRt { get => userReplyRt; set => userReplyRt = value; }
     }
 }

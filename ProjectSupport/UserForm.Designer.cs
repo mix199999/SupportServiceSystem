@@ -45,6 +45,7 @@
             this.searchClick = new System.Windows.Forms.PictureBox();
             this.searchTx = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.naviUserPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -58,7 +59,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1021, 629);
             this.panel1.TabIndex = 0;
-   
             // 
             // naviUserPanel
             // 
@@ -97,7 +97,6 @@
             this.userNameLb.TabIndex = 7;
             this.userNameLb.Text = "label1";
             this.userNameLb.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-         
             // 
             // showHelpBt
             // 
@@ -147,6 +146,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.searchClick);
             this.panel2.Controls.Add(this.searchTx);
@@ -155,7 +155,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1278, 63);
             this.panel2.TabIndex = 8;
-         
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseMove);
             this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseUp);
@@ -198,6 +197,15 @@
             this.label1.Size = new System.Drawing.Size(91, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(284, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 23);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "label2";
             // 
             // UserForm
             // 
@@ -242,5 +250,6 @@
         private System.Windows.Forms.TextBox searchTx;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label2;
     }
 }

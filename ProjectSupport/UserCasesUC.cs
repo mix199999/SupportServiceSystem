@@ -10,12 +10,14 @@ using System.Windows.Forms;
 
 namespace ProjectSupport
 {
-    public partial class UserOldCasesUC : UserControl
+    public partial class UserCasesUC : UserControl
     {
         public EventHandler replyBtClicked;
         public EventHandler Cos;
         public EventHandler oldCaseLoad;
-        public UserOldCasesUC()
+        public EventHandler caseBox_Click;
+
+        public UserCasesUC()
         {
             InitializeComponent();
 
@@ -61,6 +63,11 @@ namespace ProjectSupport
         }
 
         private void testTx_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void casesListBox_Click(object sender, EventArgs e)
         {
 
         }

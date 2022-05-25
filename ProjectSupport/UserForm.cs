@@ -7,6 +7,8 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 namespace ProjectSupport
 {
+    
+
     public enum AnswearType
     {
         buyerPurchase,
@@ -18,6 +20,7 @@ namespace ProjectSupport
     };
     public partial class UserForm : Form
     {
+
         public selectSellerBuyerBar naviSelect = new selectSellerBuyerBar();
         public sellerUserControl naviSeller = new sellerUserControl();
         public buyerUserControl naviBuyer = new buyerUserControl();
@@ -47,7 +50,7 @@ namespace ProjectSupport
         CaseTab userCaseData = new CaseTab();
 
         ProjectDB db;
-        public UserOldCasesUC oldCases = new UserOldCasesUC();
+        public UserCasesUC userCases = new UserCasesUC();
         public UserForm()
         {
 
@@ -56,7 +59,7 @@ namespace ProjectSupport
             SetDockHide(naviSelect);
             SetDockHide(naviBuyer);
             SetDockHide(naviSeller);
-            naviBuyer.PurchaseBt.Tag = "dupa";
+            
 
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
@@ -70,12 +73,14 @@ namespace ProjectSupport
             this.naviSeller.promoClicked += new EventHandler(CheckButtonHelp);
             this.naviSeller.commmissionsClicked += new EventHandler(CheckButtonHelp);
             this.userPanel.SendCase += new EventHandler(SendBt_Click);
-            this.oldCases.Load += new EventHandler(OldCases_Load);
-            this.oldCases.CasesListBox.Click += new EventHandler(CasesListBox_Clicked);
+            this.userCases.Load += new EventHandler(OldCases_Load);
+            this.userCases.CasesListBox.Click += new EventHandler(CasesListBox_Clicked);
+            this.userCases.replyBtClicked += new EventHandler(SendUserReply);
+            
 
 
         }
-
+       
         private void UserForm_Load(object sender, EventArgs e)
         {
 
@@ -86,11 +91,11 @@ namespace ProjectSupport
             resultsUC.Visible = true;
 
             helpTopics.Visible = false;
-            oldCases.Visible = false;
+            userCases.Visible = false;
             userPanel.Visible = false;
             helpTopics.Dock = DockStyle.Fill;
             userPanel.Dock = DockStyle.Fill;
-            oldCases.Dock = DockStyle.Fill;
+            userCases.Dock = DockStyle.Fill;
 
             HideControls();
 
@@ -98,10 +103,12 @@ namespace ProjectSupport
             userTextData.UserId = UserID;
             userCaseData.UserId = UserID;
 
+            
+           
 
         }
 
-
+       
 
         private void OpenCaseBt_Click(object sender, EventArgs e)
         {
@@ -110,7 +117,7 @@ namespace ProjectSupport
             userPanel.Visible = true;
             helpTopics.Visible = false;
 
-            oldCases.Visible = false;
+            userCases.Visible = false;
 
 
             using (db = new ProjectDB())
@@ -164,6 +171,8 @@ namespace ProjectSupport
             db.Dispose();
 
         }
+
+        
 
 
 
@@ -219,7 +228,7 @@ namespace ProjectSupport
         private void ShowHelpBt_Click(object sender, EventArgs e)
         {
             helpTopics.Visible = true;
-            oldCases.Visible = false;
+            userCases.Visible = false;
             userPanel.Visible = false;
             resultsUC.Visible = false;
 
@@ -249,7 +258,7 @@ namespace ProjectSupport
 
         private void OldCaseBt_Click(object sender, EventArgs e)
         {
-            oldCases.Visible = true;
+            userCases.Visible = true;
             userPanel.Visible = false;
             helpTopics.Visible = false;
             resultsUC.Visible = false;
@@ -259,7 +268,7 @@ namespace ProjectSupport
 
         private void HideControls()
         {
-            if (oldCases.Visible == true)
+            if (userCases.Visible == true)
             {
                 userPanel.Visible = false;
                 helpTopics.Visible = false;
@@ -267,11 +276,11 @@ namespace ProjectSupport
             else if (userPanel.Visible == true)
             {
                 helpTopics.Visible = false;
-                oldCases.Visible = false;
+                userCases.Visible = false;
             }
             else if (helpTopics.Visible == true)
             {
-                userPanel.Visible = (oldCases.Visible == false);
+                userPanel.Visible = (userCases.Visible == false);
             }
         }
 
@@ -279,16 +288,16 @@ namespace ProjectSupport
         private void OldCases_Load(object sender, EventArgs e)
         {
 
-
+            
             using (db = new ProjectDB())
             {
                 var getData = (from user in db.CaseTab
                                where user.UserId == UserID
                                select user).ToList();
 
-                oldCases.CasesListBox.DataSource = getData;
-                oldCases.CasesListBox.DisplayMember = "CaseName";
-                oldCases.CasesListBox.ValueMember = "CaseStatus";
+                userCases.CasesListBox.DataSource = getData;
+                userCases.CasesListBox.DisplayMember = "CaseName";
+                userCases.CasesListBox.ValueMember = "CaseStatus";
 
             }
             db.Dispose();
@@ -297,11 +306,25 @@ namespace ProjectSupport
 
         private void CasesListBox_Clicked(object a, EventArgs e)
         {
+            GetCaseId();
+            
+            label1.Text = userTextData.CaseId.ToString();
+            userCases.StatusLb.Text = userCases.CasesListBox.GetItemText(userCases.CasesListBox.SelectedValue);
+            userCases.TitleLb.Text = userCases.CasesListBox.GetItemText(userCases.CasesListBox.SelectedItem);
+            string status = userCases.StatusLb.Text;
+            if (status == "Closed")
+            {
+                userCases.ReplyBt.Visible = true;
+                userCases.UserReplyRt.Visible = true;
 
-            oldCases.StatusLb.Text = oldCases.CasesListBox.GetItemText(oldCases.CasesListBox.SelectedValue);
-            oldCases.TitleLb.Text = oldCases.CasesListBox.GetItemText(oldCases.CasesListBox.SelectedItem);
-
+            }
+            else if (status == "Open")
+            {
+                userCases.ReplyBt.Visible = false;
+                userCases.UserReplyRt.Visible = false;
+            }
             GetRespondRtText();
+
 
 
         }
@@ -309,50 +332,101 @@ namespace ProjectSupport
 
         private void GetRespondRtText()
         {
-            oldCases.ReplyRt.Text = "";
-            string Title = oldCases.CasesListBox.GetItemText(oldCases.CasesListBox.SelectedItem);
+            userCases.ReplyRt.Text = "";
+            string title = userCases.CasesListBox.GetItemText(userCases.CasesListBox.SelectedItem);
+          
+
 
             using (db = new ProjectDB())
             {
 
 
-                var getUserText = (from user in db.UserChat
-                                   where Title == user.CaseTab.CaseName
-                                   select user.UserText).ToArray();
+                var getUserText = (from casee in db.CaseTab
+                                   join user in db.UserChat on casee.UserId equals user.UserId
+                                   where user.CaseTab.CaseName == title
+                                   orderby user.DialogId
+                                   select user.UserText
+                                   ).ToHashSet().ToArray();
 
 
 
+                var getAdminText = (from casee in db.CaseTab
+                                    join admin in db.AdminChat on casee.CaseId equals admin.CaseId
+                                    where admin.CaseTab.CaseName == title
+                                    orderby admin.DialogId
+                                    select admin.AdminText).ToHashSet().ToArray();
 
-                var getAdminText = (from admin in db.AdminChat
-                                    where Title == admin.CaseTab.CaseName
-                                    select admin.AdminText).ToArray();
 
+                IEnumerable<string> userTextArray = getUserText;
+                IEnumerable<string> adminTextArray = getAdminText;
 
-
-                var displayChat = getUserText.Zip(getAdminText, (user, admin) => new { User = user, Admin = admin });
-                foreach (var item in displayChat)
+                if (getUserText.Length < getAdminText.Length)
                 {
-                    if (item.User != null)
+                    userTextArray = getUserText.Concat(Enumerable.Repeat("", getAdminText.Length - getUserText.Length));
+                    var displayChat1 = getUserText.Zip(userTextArray, (user, admin) => new { User = user, Admin = admin });
+                    foreach (var item in displayChat1)
                     {
-                        oldCases.ReplyRt.SelectionAlignment = HorizontalAlignment.Left;
-                        oldCases.ReplyRt.AppendText(item.User + "\r\n");
-                        oldCases.ReplyRt.AppendText("You \r\n");
-                    }
-                    if (item.Admin != null)
-                    {
-                        oldCases.ReplyRt.SelectionAlignment = HorizontalAlignment.Right;
-                        oldCases.ReplyRt.AppendText(item.Admin + "\r\n");
-                        oldCases.ReplyRt.AppendText("Admin \r\n");
-                    }
+                        if(item.User != "")
+                        {
+                            userCases.ReplyRt.SelectionAlignment = HorizontalAlignment.Left;
+                            userCases.ReplyRt.AppendText(item.User + "\r\n");
+                            userCases.ReplyRt.AppendText("You \r\n");
 
+                        }
+                        
+
+
+                        if(item.Admin != "")
+                        {
+                            userCases.ReplyRt.SelectionAlignment = HorizontalAlignment.Right;
+                            userCases.ReplyRt.AppendText(item.Admin + "\r\n");
+                            userCases.ReplyRt.AppendText("Admin \r\n");
+
+                        }
+
+
+                    }
                 }
+
+                else if(getUserText.Length > getAdminText.Length)
+                {
+                    adminTextArray = getAdminText.Concat(Enumerable.Repeat("", getUserText.Length - getAdminText.Length));
+
+                    var displayChat2 = getUserText.Zip(adminTextArray, (user, admin) => new { User = user, Admin = admin });
+                    foreach (var item in displayChat2)
+                    {
+                        if (item.User != "")
+                        {
+                            userCases.ReplyRt.SelectionAlignment = HorizontalAlignment.Left;
+                            userCases.ReplyRt.AppendText(item.User + "\r\n");
+                            userCases.ReplyRt.AppendText("You \r\n");
+
+                        }
+
+
+
+                        if (item.Admin != "")
+                        {
+                            userCases.ReplyRt.SelectionAlignment = HorizontalAlignment.Right;
+                            userCases.ReplyRt.AppendText(item.Admin + "\r\n");
+                            userCases.ReplyRt.AppendText("Admin \r\n");
+
+                        }
+
+
+                    }
+                }
+
+                
 
             }
             db.Dispose();
 
+            
+
         }
 
-
+      
 
         private void SearchClick_Click(object sender, EventArgs e)
         {
@@ -372,7 +446,7 @@ namespace ProjectSupport
 
             resultsUC.Visible = true;
             helpTopics.Visible = false;
-            oldCases.Visible = false;
+            userCases.Visible = false;
             userPanel.Visible = false;
 
 
@@ -440,7 +514,8 @@ namespace ProjectSupport
 
         public void Appearence()
         {
-
+            this.userCases.ReplyBt.Visible = false;
+            this.userCases.UserReplyRt.Visible = false;
             this.panel2.BackColor = Colors.ColorsList[5];
             this.naviUserPanel.BackColor = Colors.ColorsList[4];
             this.searchTx.BackColor = Color.White;
@@ -456,7 +531,7 @@ namespace ProjectSupport
             this.helpTopics.AnswearRT.ReadOnly = true;
             this.searchTx.BackColor = Colors.ColorsList[4];
             this.searchTx.ForeColor = Colors.ColorsList[3];
-
+           
         }
 
 
@@ -495,7 +570,7 @@ namespace ProjectSupport
         {
             panel1.Controls.Add(resultsUC);
             panel1.Controls.Add(helpTopics);
-            panel1.Controls.Add(oldCases);
+            panel1.Controls.Add(userCases);
             panel1.Controls.Add(userPanel);
         }
 
@@ -514,8 +589,81 @@ namespace ProjectSupport
         {
             Environment.Exit(0);
         }
+        private void SendUserReply(object s, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(userCases.UserReplyRt.Text))
+            {
+              
+                string caseTitle = userCases.CasesListBox.GetItemText(userCases.CasesListBox.SelectedItem);
+                userTextData.UserText = userCases.UserReplyRt.Text;
+               
+                label1.Text = userTextData.CaseId.ToString();
+
+
+
+                using (db = new ProjectDB())
+                {
+
+
+
+                    var insertUserText = (from user in db.UserChat
+                                          where user.UserId == userTextData.UserId
+                                          select user.UserId).ToHashSet().SingleOrDefault();
+
+                    var updateCaseStatus = (from casee in db.CaseTab
+                                            where casee.CaseId == userTextData.CaseId
+                                            select casee.CaseStatus).SingleOrDefault();
+                   
+                    if (insertUserText != null)
+                    {
+                        if(insertUserText.Value != 0)
+                        label2.Text = "ok";
+                        updateCaseStatus = "Open";
+                        db.UserChat.Add(userTextData);
+                        db.SaveChanges();
+                        userCases.ReplyBt.Visible = false;
+                        userCases.UserReplyRt.Visible = false;
+                        userCases.Refresh();
+
+
+                    }
+
+
+
+
+                }
+                db.Dispose();
+            }
+        }
+
+        private void GetCaseId()
+        {
+            string caseTitle = userCases.CasesListBox.GetItemText(userCases.CasesListBox.SelectedItem);
+            using (db = new ProjectDB())
+            {
+                var getCaseId = (from user in db.UserChat
+                                 where user.CaseTab.CaseName == caseTitle && user.UserId == userTextData.UserId
+                                 select user.CaseId).ToHashSet().SingleOrDefault();
+
+                if (getCaseId != null)
+                {
+
+                    userTextData.CaseId = getCaseId;
+                }
+                else
+                    userTextData.CaseId = 0;
+                
+                
+            }
+
+            
+
+
+
+        }
 
     }
+   
 
 
 
