@@ -352,7 +352,7 @@ namespace ProjectSupport
 
                 var getAdminText = (from casee in db.CaseTab
                                     join admin in db.AdminChat on casee.CaseId equals admin.CaseId
-                                    where admin.CaseTab.CaseName == title
+                                    where admin.CaseTab.CaseName == title 
                                     orderby admin.DialogId
                                     select admin.AdminText).ToHashSet().ToArray();
 
@@ -415,6 +415,35 @@ namespace ProjectSupport
 
 
                     }
+                }
+
+
+                else
+                {
+                    var displayChat3 = getUserText.Zip(getAdminText, (user, admin) => new { User = user, Admin = admin });
+                    foreach (var item in displayChat3)
+                    {
+                        if (item.User != "")
+                        {
+                            userCases.ReplyRt.SelectionAlignment = HorizontalAlignment.Left;
+                            userCases.ReplyRt.AppendText(item.User + "\r\n");
+                            userCases.ReplyRt.AppendText("You \r\n");
+
+                        }
+
+
+
+                        if (item.Admin != "")
+                        {
+                            userCases.ReplyRt.SelectionAlignment = HorizontalAlignment.Right;
+                            userCases.ReplyRt.AppendText(item.Admin + "\r\n");
+                            userCases.ReplyRt.AppendText("Admin \r\n");
+
+                        }
+
+
+                    }
+
                 }
 
                 
