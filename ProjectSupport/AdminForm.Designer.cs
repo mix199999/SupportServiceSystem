@@ -29,23 +29,24 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.greetingLabel = new System.Windows.Forms.Label();
-            this.caseIDLabel = new System.Windows.Forms.Label();
-            this.caseNameLabel = new System.Windows.Forms.Label();
-            this.userIDLabel = new System.Windows.Forms.Label();
-            this.userNameLabel = new System.Windows.Forms.Label();
-            this.transactionIDLabel = new System.Windows.Forms.Label();
-            this.chatBox = new System.Windows.Forms.RichTextBox();
+            this.breakPanel = new System.Windows.Forms.Panel();
+            this.auxLabel1 = new System.Windows.Forms.Label();
             this.replyMsgTxtBox = new System.Windows.Forms.RichTextBox();
-            this.replyBtn = new System.Windows.Forms.Button();
+            this.chatBox = new System.Windows.Forms.RichTextBox();
+            this.transactionIDLabel = new System.Windows.Forms.Label();
+            this.userNameLabel = new System.Windows.Forms.Label();
+            this.userIDLabel = new System.Windows.Forms.Label();
+            this.caseNameLabel = new System.Windows.Forms.Label();
+            this.caseIDLabel = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.greetingLabel = new System.Windows.Forms.Label();
             this.casesNrLabel = new System.Windows.Forms.Label();
             this.casesList = new System.Windows.Forms.ListBox();
             this.backPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.auxLabel1 = new System.Windows.Forms.Label();
+            this.logOutBtn = new System.Windows.Forms.Button();
             this.refreshBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.PictureBox();
-            this.breakPanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.replyBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.exitBtn)).BeginInit();
             this.SuspendLayout();
@@ -68,65 +69,32 @@
             this.panel1.Size = new System.Drawing.Size(800, 609);
             this.panel1.TabIndex = 0;
             // 
-            // greetingLabel
+            // breakPanel
             // 
-            this.greetingLabel.AutoSize = true;
-            this.greetingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.greetingLabel.Location = new System.Drawing.Point(12, 9);
-            this.greetingLabel.Name = "greetingLabel";
-            this.greetingLabel.Size = new System.Drawing.Size(97, 35);
-            this.greetingLabel.TabIndex = 0;
-            this.greetingLabel.Text = "label1";
+            this.breakPanel.Location = new System.Drawing.Point(0, 70);
+            this.breakPanel.Name = "breakPanel";
+            this.breakPanel.Size = new System.Drawing.Size(800, 3);
+            this.breakPanel.TabIndex = 9;
             // 
-            // caseIDLabel
+            // auxLabel1
             // 
-            this.caseIDLabel.AutoSize = true;
-            this.caseIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.caseIDLabel.Location = new System.Drawing.Point(15, 15);
-            this.caseIDLabel.Name = "caseIDLabel";
-            this.caseIDLabel.Size = new System.Drawing.Size(51, 20);
-            this.caseIDLabel.TabIndex = 0;
-            this.caseIDLabel.Text = "label1";
+            this.auxLabel1.AutoSize = true;
+            this.auxLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.auxLabel1.Location = new System.Drawing.Point(234, 271);
+            this.auxLabel1.Name = "auxLabel1";
+            this.auxLabel1.Size = new System.Drawing.Size(304, 26);
+            this.auxLabel1.TabIndex = 8;
+            this.auxLabel1.Text = "(a case will be displayed here)";
             // 
-            // caseNameLabel
+            // replyMsgTxtBox
             // 
-            this.caseNameLabel.AutoSize = true;
-            this.caseNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.caseNameLabel.Location = new System.Drawing.Point(15, 35);
-            this.caseNameLabel.Name = "caseNameLabel";
-            this.caseNameLabel.Size = new System.Drawing.Size(51, 20);
-            this.caseNameLabel.TabIndex = 1;
-            this.caseNameLabel.Text = "label1";
-            // 
-            // userIDLabel
-            // 
-            this.userIDLabel.AutoSize = true;
-            this.userIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userIDLabel.Location = new System.Drawing.Point(321, 15);
-            this.userIDLabel.Name = "userIDLabel";
-            this.userIDLabel.Size = new System.Drawing.Size(51, 20);
-            this.userIDLabel.TabIndex = 2;
-            this.userIDLabel.Text = "label1";
-            // 
-            // userNameLabel
-            // 
-            this.userNameLabel.AutoSize = true;
-            this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameLabel.Location = new System.Drawing.Point(321, 35);
-            this.userNameLabel.Name = "userNameLabel";
-            this.userNameLabel.Size = new System.Drawing.Size(51, 20);
-            this.userNameLabel.TabIndex = 3;
-            this.userNameLabel.Text = "label1";
-            // 
-            // transactionIDLabel
-            // 
-            this.transactionIDLabel.AutoSize = true;
-            this.transactionIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transactionIDLabel.Location = new System.Drawing.Point(617, 15);
-            this.transactionIDLabel.Name = "transactionIDLabel";
-            this.transactionIDLabel.Size = new System.Drawing.Size(51, 20);
-            this.transactionIDLabel.TabIndex = 4;
-            this.transactionIDLabel.Text = "label1";
+            this.replyMsgTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.replyMsgTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.replyMsgTxtBox.Location = new System.Drawing.Point(19, 510);
+            this.replyMsgTxtBox.Name = "replyMsgTxtBox";
+            this.replyMsgTxtBox.Size = new System.Drawing.Size(673, 78);
+            this.replyMsgTxtBox.TabIndex = 6;
+            this.replyMsgTxtBox.Text = "<reply with message>";
             // 
             // chatBox
             // 
@@ -139,28 +107,72 @@
             this.chatBox.TabIndex = 5;
             this.chatBox.Text = "";
             // 
-            // replyMsgTxtBox
+            // transactionIDLabel
             // 
-            this.replyMsgTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.replyMsgTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.replyMsgTxtBox.Location = new System.Drawing.Point(19, 510);
-            this.replyMsgTxtBox.Name = "replyMsgTxtBox";
-            this.replyMsgTxtBox.Size = new System.Drawing.Size(673, 78);
-            this.replyMsgTxtBox.TabIndex = 6;
-            this.replyMsgTxtBox.Text = "<reply with message>";
+            this.transactionIDLabel.AutoSize = true;
+            this.transactionIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transactionIDLabel.Location = new System.Drawing.Point(617, 15);
+            this.transactionIDLabel.Name = "transactionIDLabel";
+            this.transactionIDLabel.Size = new System.Drawing.Size(51, 20);
+            this.transactionIDLabel.TabIndex = 4;
+            this.transactionIDLabel.Text = "label1";
             // 
-            // replyBtn
+            // userNameLabel
             // 
-            //this.replyBtn.Image = global::ProjectSupport.Properties.Resources.asd;
-            this.replyBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.replyBtn.Location = new System.Drawing.Point(698, 510);
-            this.replyBtn.Name = "replyBtn";
-            this.replyBtn.Size = new System.Drawing.Size(90, 78);
-            this.replyBtn.TabIndex = 7;
-            this.replyBtn.Text = "Reply  ";
-            this.replyBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.replyBtn.UseVisualStyleBackColor = true;
-            this.replyBtn.Click += new System.EventHandler(this.replyBtn_Click);
+            this.userNameLabel.AutoSize = true;
+            this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameLabel.Location = new System.Drawing.Point(321, 35);
+            this.userNameLabel.Name = "userNameLabel";
+            this.userNameLabel.Size = new System.Drawing.Size(51, 20);
+            this.userNameLabel.TabIndex = 3;
+            this.userNameLabel.Text = "label1";
+            // 
+            // userIDLabel
+            // 
+            this.userIDLabel.AutoSize = true;
+            this.userIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userIDLabel.Location = new System.Drawing.Point(321, 15);
+            this.userIDLabel.Name = "userIDLabel";
+            this.userIDLabel.Size = new System.Drawing.Size(51, 20);
+            this.userIDLabel.TabIndex = 2;
+            this.userIDLabel.Text = "label1";
+            // 
+            // caseNameLabel
+            // 
+            this.caseNameLabel.AutoSize = true;
+            this.caseNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.caseNameLabel.Location = new System.Drawing.Point(15, 35);
+            this.caseNameLabel.Name = "caseNameLabel";
+            this.caseNameLabel.Size = new System.Drawing.Size(51, 20);
+            this.caseNameLabel.TabIndex = 1;
+            this.caseNameLabel.Text = "label1";
+            // 
+            // caseIDLabel
+            // 
+            this.caseIDLabel.AutoSize = true;
+            this.caseIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.caseIDLabel.Location = new System.Drawing.Point(15, 15);
+            this.caseIDLabel.Name = "caseIDLabel";
+            this.caseIDLabel.Size = new System.Drawing.Size(51, 20);
+            this.caseIDLabel.TabIndex = 0;
+            this.caseIDLabel.Text = "label1";
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(18, 509);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(676, 80);
+            this.panel2.TabIndex = 10;
+            // 
+            // greetingLabel
+            // 
+            this.greetingLabel.AutoSize = true;
+            this.greetingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.greetingLabel.Location = new System.Drawing.Point(12, 12);
+            this.greetingLabel.Name = "greetingLabel";
+            this.greetingLabel.Size = new System.Drawing.Size(97, 35);
+            this.greetingLabel.TabIndex = 0;
+            this.greetingLabel.Text = "label1";
             // 
             // casesNrLabel
             // 
@@ -193,23 +205,27 @@
             this.backPanel.Size = new System.Drawing.Size(245, 423);
             this.backPanel.TabIndex = 11;
             // 
-            // auxLabel1
+            // logOutBtn
             // 
-            this.auxLabel1.AutoSize = true;
-            this.auxLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.auxLabel1.Location = new System.Drawing.Point(234, 271);
-            this.auxLabel1.Name = "auxLabel1";
-            this.auxLabel1.Size = new System.Drawing.Size(304, 26);
-            this.auxLabel1.TabIndex = 8;
-            this.auxLabel1.Text = "(a case will be displayed here)";
+            this.logOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logOutBtn.Image = global::ProjectSupport.Properties.Resources.log_out_icon;
+            this.logOutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logOutBtn.Location = new System.Drawing.Point(945, 12);
+            this.logOutBtn.Name = "logOutBtn";
+            this.logOutBtn.Size = new System.Drawing.Size(81, 25);
+            this.logOutBtn.TabIndex = 12;
+            this.logOutBtn.Text = "Log Out";
+            this.logOutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.logOutBtn.UseVisualStyleBackColor = true;
+            this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
             // 
             // refreshBtn
             // 
-            //this.refreshBtn.Image = global::ProjectSupport.Properties.Resources.asdasd;
+            this.refreshBtn.Image = global::ProjectSupport.Properties.Resources.refresh_icon;
             this.refreshBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.refreshBtn.Location = new System.Drawing.Point(157, 579);
+            this.refreshBtn.Location = new System.Drawing.Point(166, 570);
             this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(89, 78);
+            this.refreshBtn.Size = new System.Drawing.Size(89, 80);
             this.refreshBtn.TabIndex = 9;
             this.refreshBtn.Text = "Refresh";
             this.refreshBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -218,8 +234,8 @@
             // 
             // exitBtn
             // 
-            this.exitBtn.ImageLocation = "C:\\Users\\mrmau\\Desktop\\SupportServiceSystem-WorkInProgress\\SupportServiceSystem-W" +
-    "orkInProgress\\ProjectSupport\\Resources\\exit_sign.png";
+            this.exitBtn.Image = global::ProjectSupport.Properties.Resources.exit_sign;
+            this.exitBtn.ImageLocation = "";
             this.exitBtn.Location = new System.Drawing.Point(1037, 12);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(20, 20);
@@ -227,25 +243,25 @@
             this.exitBtn.TabStop = false;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
-            // breakPanel
+            // replyBtn
             // 
-            this.breakPanel.Location = new System.Drawing.Point(0, 70);
-            this.breakPanel.Name = "breakPanel";
-            this.breakPanel.Size = new System.Drawing.Size(800, 3);
-            this.breakPanel.TabIndex = 9;
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(18, 509);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(676, 80);
-            this.panel2.TabIndex = 10;
+            this.replyBtn.Image = global::ProjectSupport.Properties.Resources.send_icon;
+            this.replyBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.replyBtn.Location = new System.Drawing.Point(698, 510);
+            this.replyBtn.Name = "replyBtn";
+            this.replyBtn.Size = new System.Drawing.Size(90, 78);
+            this.replyBtn.TabIndex = 7;
+            this.replyBtn.Text = "Reply  ";
+            this.replyBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.replyBtn.UseVisualStyleBackColor = true;
+            this.replyBtn.Click += new System.EventHandler(this.replyBtn_Click);
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1069, 669);
+            this.Controls.Add(this.logOutBtn);
             this.Controls.Add(this.casesList);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.casesNrLabel);
@@ -287,5 +303,6 @@
         private System.Windows.Forms.Label auxLabel1;
         private System.Windows.Forms.Panel breakPanel;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button logOutBtn;
     }
 }
