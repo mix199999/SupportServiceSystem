@@ -82,7 +82,7 @@ namespace ProjectSupport
                     {
 
                         this.Hide();
-                        using (AdminForm adminForm = new AdminForm())
+                        using (AdminForm adminForm = new AdminForm(this))
                         {
                             adminForm.UserID = loginQuery.UserId;
                             adminForm.ShowDialog();

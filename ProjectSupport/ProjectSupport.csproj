@@ -259,6 +259,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\exit_sign.png" />
+    <None Include="Resources\log_out_icon.png" />
+    <None Include="Resources\send_icon.png" />
+    <None Include="Resources\refresh_icon.png" />
     <None Include="Resources\newCase.png" />
     <None Include="Resources\question.png" />
   </ItemGroup>
