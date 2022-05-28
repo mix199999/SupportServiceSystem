@@ -18,6 +18,7 @@ namespace ProjectSupport
         public string AnswearType { get; set; }
         public string AnswearText { get; set; }
         public Nullable<int> AnswearTypeId { get; set; }
+        public string AnswearTitle { get; set; }
     
         public virtual AnswearsTypes AnswearsTypes { get; set; }
     }

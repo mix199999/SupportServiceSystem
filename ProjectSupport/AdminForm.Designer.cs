@@ -28,172 +28,281 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.InsertBt = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.SaveBt = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.caseIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.caseNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.transactionIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userTextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adminTextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.caseStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.caseTabBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.caseTabBindingSource1)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.breakPanel = new System.Windows.Forms.Panel();
+            this.auxLabel1 = new System.Windows.Forms.Label();
+            this.replyMsgTxtBox = new System.Windows.Forms.RichTextBox();
+            this.chatBox = new System.Windows.Forms.RichTextBox();
+            this.transactionIDLabel = new System.Windows.Forms.Label();
+            this.userNameLabel = new System.Windows.Forms.Label();
+            this.userIDLabel = new System.Windows.Forms.Label();
+            this.caseNameLabel = new System.Windows.Forms.Label();
+            this.caseIDLabel = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.greetingLabel = new System.Windows.Forms.Label();
+            this.casesNrLabel = new System.Windows.Forms.Label();
+            this.casesList = new System.Windows.Forms.ListBox();
+            this.backPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.logOutBtn = new System.Windows.Forms.Button();
+            this.refreshBtn = new System.Windows.Forms.Button();
+            this.exitBtn = new System.Windows.Forms.PictureBox();
+            this.replyBtn = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exitBtn)).BeginInit();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // panel1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(804, 82);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(482, 362);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.panel1.Controls.Add(this.breakPanel);
+            this.panel1.Controls.Add(this.auxLabel1);
+            this.panel1.Controls.Add(this.replyBtn);
+            this.panel1.Controls.Add(this.replyMsgTxtBox);
+            this.panel1.Controls.Add(this.chatBox);
+            this.panel1.Controls.Add(this.transactionIDLabel);
+            this.panel1.Controls.Add(this.userNameLabel);
+            this.panel1.Controls.Add(this.userIDLabel);
+            this.panel1.Controls.Add(this.caseNameLabel);
+            this.panel1.Controls.Add(this.caseIDLabel);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(269, 61);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 609);
+            this.panel1.TabIndex = 0;
             // 
-            // InsertBt
+            // breakPanel
             // 
-            this.InsertBt.Location = new System.Drawing.Point(1211, 508);
-            this.InsertBt.Name = "InsertBt";
-            this.InsertBt.Size = new System.Drawing.Size(75, 23);
-            this.InsertBt.TabIndex = 2;
-            this.InsertBt.Text = "ADD";
-            this.InsertBt.UseVisualStyleBackColor = true;
-            this.InsertBt.Click += new System.EventHandler(this.InsertBt_Click);
+            this.breakPanel.Location = new System.Drawing.Point(0, 70);
+            this.breakPanel.Name = "breakPanel";
+            this.breakPanel.Size = new System.Drawing.Size(800, 3);
+            this.breakPanel.TabIndex = 9;
             // 
-            // button2
+            // auxLabel1
             // 
-            this.button2.Location = new System.Drawing.Point(746, 538);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.auxLabel1.AutoSize = true;
+            this.auxLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.auxLabel1.Location = new System.Drawing.Point(234, 271);
+            this.auxLabel1.Name = "auxLabel1";
+            this.auxLabel1.Size = new System.Drawing.Size(304, 26);
+            this.auxLabel1.TabIndex = 8;
+            this.auxLabel1.Text = "(a case will be displayed here)";
             // 
-            // SaveBt
+            // replyMsgTxtBox
             // 
-            this.SaveBt.Location = new System.Drawing.Point(949, 547);
-            this.SaveBt.Name = "SaveBt";
-            this.SaveBt.Size = new System.Drawing.Size(75, 23);
-            this.SaveBt.TabIndex = 4;
-            this.SaveBt.Text = "Save";
-            this.SaveBt.UseVisualStyleBackColor = true;
-            this.SaveBt.Click += new System.EventHandler(this.SaveBt_Click);
+            this.replyMsgTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.replyMsgTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.replyMsgTxtBox.Location = new System.Drawing.Point(19, 510);
+            this.replyMsgTxtBox.Name = "replyMsgTxtBox";
+            this.replyMsgTxtBox.Size = new System.Drawing.Size(673, 78);
+            this.replyMsgTxtBox.TabIndex = 6;
+            this.replyMsgTxtBox.Text = "<reply with message>";
             // 
-            // dataGridView1
+            // chatBox
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.caseIdDataGridViewTextBoxColumn,
-            this.caseNameDataGridViewTextBoxColumn,
-            this.transactionIdDataGridViewTextBoxColumn,
-            this.userIdDataGridViewTextBoxColumn,
-            this.userTextDataGridViewTextBoxColumn,
-            this.adminTextDataGridViewTextBoxColumn,
-            this.caseStatusDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.caseTabBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 44);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(750, 424);
-            this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.chatBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.chatBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chatBox.Location = new System.Drawing.Point(19, 86);
+            this.chatBox.Name = "chatBox";
+            this.chatBox.ReadOnly = true;
+            this.chatBox.Size = new System.Drawing.Size(769, 418);
+            this.chatBox.TabIndex = 5;
+            this.chatBox.Text = "";
             // 
-            // caseIdDataGridViewTextBoxColumn
+            // transactionIDLabel
             // 
-            this.caseIdDataGridViewTextBoxColumn.DataPropertyName = "CaseId";
-            this.caseIdDataGridViewTextBoxColumn.HeaderText = "CaseId";
-            this.caseIdDataGridViewTextBoxColumn.Name = "caseIdDataGridViewTextBoxColumn";
+            this.transactionIDLabel.AutoSize = true;
+            this.transactionIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transactionIDLabel.Location = new System.Drawing.Point(617, 15);
+            this.transactionIDLabel.Name = "transactionIDLabel";
+            this.transactionIDLabel.Size = new System.Drawing.Size(51, 20);
+            this.transactionIDLabel.TabIndex = 4;
+            this.transactionIDLabel.Text = "label1";
             // 
-            // caseNameDataGridViewTextBoxColumn
+            // userNameLabel
             // 
-            this.caseNameDataGridViewTextBoxColumn.DataPropertyName = "CaseName";
-            this.caseNameDataGridViewTextBoxColumn.HeaderText = "CaseName";
-            this.caseNameDataGridViewTextBoxColumn.Name = "caseNameDataGridViewTextBoxColumn";
+            this.userNameLabel.AutoSize = true;
+            this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameLabel.Location = new System.Drawing.Point(321, 35);
+            this.userNameLabel.Name = "userNameLabel";
+            this.userNameLabel.Size = new System.Drawing.Size(51, 20);
+            this.userNameLabel.TabIndex = 3;
+            this.userNameLabel.Text = "label1";
             // 
-            // transactionIdDataGridViewTextBoxColumn
+            // userIDLabel
             // 
-            this.transactionIdDataGridViewTextBoxColumn.DataPropertyName = "TransactionId";
-            this.transactionIdDataGridViewTextBoxColumn.HeaderText = "TransactionId";
-            this.transactionIdDataGridViewTextBoxColumn.Name = "transactionIdDataGridViewTextBoxColumn";
+            this.userIDLabel.AutoSize = true;
+            this.userIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userIDLabel.Location = new System.Drawing.Point(321, 15);
+            this.userIDLabel.Name = "userIDLabel";
+            this.userIDLabel.Size = new System.Drawing.Size(51, 20);
+            this.userIDLabel.TabIndex = 2;
+            this.userIDLabel.Text = "label1";
             // 
-            // userIdDataGridViewTextBoxColumn
+            // caseNameLabel
             // 
-            this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
-            this.userIdDataGridViewTextBoxColumn.HeaderText = "UserId";
-            this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
+            this.caseNameLabel.AutoSize = true;
+            this.caseNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.caseNameLabel.Location = new System.Drawing.Point(15, 35);
+            this.caseNameLabel.Name = "caseNameLabel";
+            this.caseNameLabel.Size = new System.Drawing.Size(51, 20);
+            this.caseNameLabel.TabIndex = 1;
+            this.caseNameLabel.Text = "label1";
             // 
-            // userTextDataGridViewTextBoxColumn
+            // caseIDLabel
             // 
-            this.userTextDataGridViewTextBoxColumn.DataPropertyName = "UserText";
-            this.userTextDataGridViewTextBoxColumn.HeaderText = "UserText";
-            this.userTextDataGridViewTextBoxColumn.Name = "userTextDataGridViewTextBoxColumn";
+            this.caseIDLabel.AutoSize = true;
+            this.caseIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.caseIDLabel.Location = new System.Drawing.Point(15, 15);
+            this.caseIDLabel.Name = "caseIDLabel";
+            this.caseIDLabel.Size = new System.Drawing.Size(51, 20);
+            this.caseIDLabel.TabIndex = 0;
+            this.caseIDLabel.Text = "label1";
             // 
-            // adminTextDataGridViewTextBoxColumn
+            // panel2
             // 
-            this.adminTextDataGridViewTextBoxColumn.DataPropertyName = "AdminText";
-            this.adminTextDataGridViewTextBoxColumn.HeaderText = "AdminText";
-            this.adminTextDataGridViewTextBoxColumn.Name = "adminTextDataGridViewTextBoxColumn";
+            this.panel2.Location = new System.Drawing.Point(18, 509);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(676, 80);
+            this.panel2.TabIndex = 10;
             // 
-            // caseStatusDataGridViewTextBoxColumn
+            // greetingLabel
             // 
-            this.caseStatusDataGridViewTextBoxColumn.DataPropertyName = "CaseStatus";
-            this.caseStatusDataGridViewTextBoxColumn.HeaderText = "CaseStatus";
-            this.caseStatusDataGridViewTextBoxColumn.Name = "caseStatusDataGridViewTextBoxColumn";
+            this.greetingLabel.AutoSize = true;
+            this.greetingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.greetingLabel.Location = new System.Drawing.Point(12, 12);
+            this.greetingLabel.Name = "greetingLabel";
+            this.greetingLabel.Size = new System.Drawing.Size(97, 35);
+            this.greetingLabel.TabIndex = 0;
+            this.greetingLabel.Text = "label1";
             // 
-            // caseTabBindingSource1
+            // casesNrLabel
             // 
-            this.caseTabBindingSource1.DataSource = typeof(ProjectSupport.CaseTab);
-            this.caseTabBindingSource1.CurrentChanged += new System.EventHandler(this.caseTabBindingSource1_CurrentChanged);
+            this.casesNrLabel.AutoSize = true;
+            this.casesNrLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.casesNrLabel.Location = new System.Drawing.Point(6, 78);
+            this.casesNrLabel.MaximumSize = new System.Drawing.Size(250, 0);
+            this.casesNrLabel.Name = "casesNrLabel";
+            this.casesNrLabel.Size = new System.Drawing.Size(240, 52);
+            this.casesNrLabel.TabIndex = 8;
+            this.casesNrLabel.Text = "There are <> cases left to be handled:";
             // 
-            // label1
+            // casesList
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(336, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "label1";
+            this.casesList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.casesList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.casesList.FormattingEnabled = true;
+            this.casesList.ItemHeight = 20;
+            this.casesList.Location = new System.Drawing.Point(12, 147);
+            this.casesList.Name = "casesList";
+            this.casesList.Size = new System.Drawing.Size(243, 420);
+            this.casesList.TabIndex = 10;
+            this.casesList.Click += new System.EventHandler(this.LoadSelectedCase);
+            this.casesList.DoubleClick += new System.EventHandler(this.LoadSelectedCase);
+            // 
+            // backPanel
+            // 
+            this.backPanel.Location = new System.Drawing.Point(11, 146);
+            this.backPanel.Name = "backPanel";
+            this.backPanel.Size = new System.Drawing.Size(245, 423);
+            this.backPanel.TabIndex = 11;
+            // 
+            // logOutBtn
+            // 
+            this.logOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logOutBtn.Image = global::ProjectSupport.Properties.Resources.log_out_icon;
+            this.logOutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logOutBtn.Location = new System.Drawing.Point(945, 12);
+            this.logOutBtn.Name = "logOutBtn";
+            this.logOutBtn.Size = new System.Drawing.Size(81, 25);
+            this.logOutBtn.TabIndex = 12;
+            this.logOutBtn.Text = "Log Out";
+            this.logOutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.logOutBtn.UseVisualStyleBackColor = true;
+            this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.Image = global::ProjectSupport.Properties.Resources.refresh_icon;
+            this.refreshBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.refreshBtn.Location = new System.Drawing.Point(166, 570);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(89, 80);
+            this.refreshBtn.TabIndex = 9;
+            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.refreshBtn.UseVisualStyleBackColor = true;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            // 
+            // exitBtn
+            // 
+            this.exitBtn.Image = global::ProjectSupport.Properties.Resources.exit_sign;
+            this.exitBtn.ImageLocation = "";
+            this.exitBtn.Location = new System.Drawing.Point(1037, 12);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(20, 20);
+            this.exitBtn.TabIndex = 1;
+            this.exitBtn.TabStop = false;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            // 
+            // replyBtn
+            // 
+            this.replyBtn.Image = global::ProjectSupport.Properties.Resources.send_icon;
+            this.replyBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.replyBtn.Location = new System.Drawing.Point(698, 510);
+            this.replyBtn.Name = "replyBtn";
+            this.replyBtn.Size = new System.Drawing.Size(90, 78);
+            this.replyBtn.TabIndex = 7;
+            this.replyBtn.Text = "Reply  ";
+            this.replyBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.replyBtn.UseVisualStyleBackColor = true;
+            this.replyBtn.Click += new System.EventHandler(this.replyBtn_Click);
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1425, 641);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.SaveBt);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.InsertBt);
-            this.Controls.Add(this.richTextBox1);
+            this.ClientSize = new System.Drawing.Size(1069, 669);
+            this.Controls.Add(this.logOutBtn);
+            this.Controls.Add(this.casesList);
+            this.Controls.Add(this.refreshBtn);
+            this.Controls.Add(this.casesNrLabel);
+            this.Controls.Add(this.exitBtn);
+            this.Controls.Add(this.greetingLabel);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.backPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminForm";
             this.Text = "AdminForm";
-            this.Load += new System.EventHandler(this.AdminForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.caseTabBindingSource1)).EndInit();
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AdminForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AdminForm_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.AdminForm_MouseUp);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exitBtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button InsertBt;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button SaveBt;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn caseIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn caseNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn transactionIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userTextDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adminTextDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn caseStatusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource caseTabBindingSource1;
-        private System.Windows.Forms.Label label1;
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label greetingLabel;
+        private System.Windows.Forms.PictureBox exitBtn;
+        private System.Windows.Forms.Label transactionIDLabel;
+        private System.Windows.Forms.Label userNameLabel;
+        private System.Windows.Forms.Label userIDLabel;
+        private System.Windows.Forms.Label caseNameLabel;
+        private System.Windows.Forms.Label caseIDLabel;
+        private System.Windows.Forms.RichTextBox chatBox;
+        private System.Windows.Forms.RichTextBox replyMsgTxtBox;
+        private System.Windows.Forms.Button replyBtn;
+        private System.Windows.Forms.Label casesNrLabel;
+        private System.Windows.Forms.Button refreshBtn;
+        private System.Windows.Forms.ListBox casesList;
+        private System.Windows.Forms.FlowLayoutPanel backPanel;
+        private System.Windows.Forms.Label auxLabel1;
+        private System.Windows.Forms.Panel breakPanel;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button logOutBtn;
     }
 }

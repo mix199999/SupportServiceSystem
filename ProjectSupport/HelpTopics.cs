@@ -1,6 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Drawing;
 
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using System.Runtime.InteropServices;
 namespace ProjectSupport
 {
 
@@ -9,36 +19,23 @@ namespace ProjectSupport
     {
         public EventHandler backBtClickHelp;
 
-        public selectSellerBuyerBar naviSelect = new selectSellerBuyerBar();
-        public sellerUserControl naviSeller = new sellerUserControl();
-        public buyerUserControl naviBuyer = new buyerUserControl();
+       
 
 
         public HelpTopics()
         {
-         
-           
-            //naviPanel.Controls.Add(naviSelect);
-
-            //naviPanel.Controls.Add(naviSeller);
-            //naviPanel.Controls.Add(naviBuyer);
             InitializeComponent();
-            setDockHide(naviSelect);
-            setDockHide(naviBuyer);
-            setDockHide(naviSeller);
-
 
         }
 
         private void naviPanel_paint(object sender, PaintEventArgs e)
         {
-
-
+      
         }
 
         private void faqUserControl_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void backBt_Click(object sender, EventArgs e)
@@ -47,17 +44,7 @@ namespace ProjectSupport
             click?.Invoke(this, e);
         }
 
-        private void setDockHide(UserControl cont)
-        {
-            naviPanel.Controls.Add(cont);
-            cont.Dock = DockStyle.Fill;
-            cont.Visible = false;
-            if(cont.Name ==naviSelect.Name)
-            {
-                cont.Visible = true;
-            }
-
-        }
+       
 
         private void answearRT_TextChanged(object sender, EventArgs e)
         {

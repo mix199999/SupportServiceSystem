@@ -41,16 +41,17 @@ namespace ProjectSupport
             // panel1
             // 
             this.panel1.Controls.Add(this.answearRT);
-            this.panel1.Location = new System.Drawing.Point(275, 55);
+            this.panel1.Location = new System.Drawing.Point(347, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(417, 413);
+            this.panel1.Size = new System.Drawing.Size(616, 484);
             this.panel1.TabIndex = 0;
             // 
             // answearRT
             // 
-            this.answearRT.Location = new System.Drawing.Point(3, 3);
+            this.answearRT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.answearRT.Location = new System.Drawing.Point(3, 0);
             this.answearRT.Name = "answearRT";
-            this.answearRT.Size = new System.Drawing.Size(411, 407);
+            this.answearRT.Size = new System.Drawing.Size(610, 481);
             this.answearRT.TabIndex = 0;
             this.answearRT.Text = "";
             this.answearRT.TextChanged += new System.EventHandler(this.answearRT_TextChanged);
@@ -58,15 +59,16 @@ namespace ProjectSupport
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(56, 40);
+            this.label1.Location = new System.Drawing.Point(96, 104);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.Size = new System.Drawing.Size(129, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "All help topics";
             // 
             // naviPanel
             // 
-            this.naviPanel.Location = new System.Drawing.Point(24, 86);
+            this.naviPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.naviPanel.Location = new System.Drawing.Point(64, 150);
             this.naviPanel.Name = "naviPanel";
             this.naviPanel.Size = new System.Drawing.Size(204, 326);
             this.naviPanel.TabIndex = 6;
@@ -75,24 +77,24 @@ namespace ProjectSupport
             // backBt
             // 
             this.backBt.AutoSize = true;
-            this.backBt.Location = new System.Drawing.Point(196, 415);
+            this.backBt.Location = new System.Drawing.Point(236, 479);
             this.backBt.Name = "backBt";
-            this.backBt.Size = new System.Drawing.Size(32, 13);
+            this.backBt.Size = new System.Drawing.Size(51, 20);
             this.backBt.TabIndex = 7;
             this.backBt.Text = "Back";
             this.backBt.Click += new System.EventHandler(this.backBt_Click);
             // 
             // HelpTopics
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.backBt);
             this.Controls.Add(this.naviPanel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
             this.Name = "HelpTopics";
-            this.Size = new System.Drawing.Size(744, 521);
+            this.Size = new System.Drawing.Size(1021, 629);
             this.Load += new System.EventHandler(this.faqUserControl_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

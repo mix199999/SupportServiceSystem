@@ -38,6 +38,8 @@ namespace ProjectSupport
             // 
             // buyerBt
             // 
+            this.buyerBt.FlatAppearance.BorderSize = 3;
+            this.buyerBt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buyerBt.Location = new System.Drawing.Point(23, 51);
             this.buyerBt.Name = "buyerBt";
             this.buyerBt.Size = new System.Drawing.Size(163, 88);
@@ -48,6 +50,8 @@ namespace ProjectSupport
             // 
             // sellerBt
             // 
+            this.sellerBt.FlatAppearance.BorderSize = 3;
+            this.sellerBt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sellerBt.Location = new System.Drawing.Point(23, 168);
             this.sellerBt.Name = "sellerBt";
             this.sellerBt.Size = new System.Drawing.Size(163, 88);
@@ -68,8 +72,7 @@ namespace ProjectSupport
             // 
             // selectSellerBuyerBar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.naviPanelSellBuy);
             this.Name = "selectSellerBuyerBar";
             this.Size = new System.Drawing.Size(204, 326);
