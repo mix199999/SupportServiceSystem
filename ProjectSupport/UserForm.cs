@@ -352,7 +352,7 @@ namespace ProjectSupport
 
                 var getAdminText = (from casee in db.CaseTab
                                     join admin in db.AdminChat on casee.CaseId equals admin.CaseId
-                                    where admin.CaseTab.CaseName == title 
+                                    where admin.CaseTab.CaseName == title
                                     orderby admin.DialogId
                                     select admin.AdminText).ToHashSet().ToArray();
 
@@ -363,7 +363,7 @@ namespace ProjectSupport
                 if (getUserText.Length < getAdminText.Length)
                 {
                     userTextArray = getUserText.Concat(Enumerable.Repeat("", getAdminText.Length - getUserText.Length));
-                    var displayChat1 = getUserText.Zip(userTextArray, (user, admin) => new { User = user, Admin = admin });
+                    var displayChat1 = getAdminText.Zip(userTextArray, (user, admin) => new { User = user, Admin = admin });
                     foreach (var item in displayChat1)
                     {
                         if(item.User != "")
@@ -641,21 +641,24 @@ namespace ProjectSupport
 
                     var updateCaseStatus = (from casee in db.CaseTab
                                             where casee.CaseId == userTextData.CaseId
-                                            select casee.CaseStatus).SingleOrDefault();
+                                            select casee).SingleOrDefault();
                    
                     if (insertUserText != null)
                     {
                         if(insertUserText.Value != 0)
                         label2.Text = "ok";
-                        updateCaseStatus = "Open";
+                       
+                        updateCaseStatus.CaseStatus = "Open";
                         db.UserChat.Add(userTextData);
                         db.SaveChanges();
                         userCases.ReplyBt.Visible = false;
                         userCases.UserReplyRt.Visible = false;
+                        
                         userCases.Refresh();
 
 
                     }
+
 
 
 
